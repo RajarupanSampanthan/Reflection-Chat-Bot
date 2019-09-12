@@ -12,3 +12,17 @@
 	1. Do you think doing this activity (these activities) helps you achieve your goal for value_x? Explain why.
 	2. What is preventing you from achieving this goal?
 	3. What should you do instead, to move towards this goal?
+	
+	
+	
+comparison of values
+what will achiving help you 
+values conflict with each other? 
+values other people see? 
+describe what you have done to achieve the value
+life different/same? 
+weakness to improve to achieve 
+express _ in life, _ important? 
+example
+how it came to value to you 
+values same in the past? why changed? 
