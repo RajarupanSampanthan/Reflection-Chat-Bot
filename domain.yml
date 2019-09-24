@@ -1,0 +1,60 @@
+%YAML 1.1
+---
+actions:
+- report_behaviour
+- report_self_reflect
+- report_value
+- utter_ask_behaviour
+- utter_ask_if_behaviour_help_value
+- utter_cheer_up
+- utter_did_that_help
+- utter_didnt_get_value
+- utter_goodbye
+- utter_greet
+- utter_happy
+- utter_value_list
+entities:
+- behaviour
+- value_type
+intents:
+- mood_great
+- affirm
+- self_refl_behvr_value
+- value_focus
+- deny
+- behaviour_describe
+- ask_for_values
+- greet
+- mood_unhappy
+- goodbye
+slots:
+  behaviour:
+    type: text
+  self_refl_behvr_value:
+    type: text
+  value_type:
+    type: text
+templates:
+  utter_ask_behaviour:
+  - text: Please describe what you spend most of your time doing.
+  utter_ask_if_behaviour_help_value:
+  - text: Do you think your behaviours help achieving the value?
+  utter_cheer_up:
+  - image: https://i.imgur.com/nGF1K8f.jpg
+    text: 'Here is something to cheer you up:'
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_didnt_get_value:
+  - text: I didn't get the value you want to focus on, or the value you said isn't
+      supported yet. The current values we can help you focus on are Family, Friendship,
+      Health, Wealth and World Peace.
+  utter_goodbye:
+  - text: Thanks for using Reflection Chatbot. I hope to see you soon!
+  utter_greet:
+  - text: Hi! Welcome the Reflection Chatbot app. My name is Idunn. Which value can
+      I help you focus today?
+  utter_happy:
+  - text: Great carry on!
+  utter_value_list:
+  - text: The available values now are Family, Friendship, Health, Wealth and World
+      Peace.
