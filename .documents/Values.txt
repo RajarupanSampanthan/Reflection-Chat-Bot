@@ -1,0 +1,20 @@
+Values chosen for the chatbot:
+
+Why we chose these values: we selected a target group - in this case, students - and we selected the values that the members of this group would generally find important.
+This does not mean all students find these values important, the importance of each fundamental value differs based on how the person feel about it. 
+
+1. Achievement
+2. Family
+3. Fun/Adventure
+4. Physical Health
+5. Minfulness/ Mental Health
+6. Independence
+7. Purpose
+8. Self-esteem
+9. Wealth
+10. Friendship
+11. Virtue / Morality
+12. Romance
+13. Responsibility
+14. Knowledge
+15. Acceptance
