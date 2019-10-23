@@ -1,4 +1,4 @@
-1. Please group the following values into 1 of 3 categories; most important, important, least important
+<b>1. Please group the following values into 1 of 3 categories; most important, important, least important</b>
 
 2. Please rank the most important values (Chatbot could select top 5 to discuss)
 
