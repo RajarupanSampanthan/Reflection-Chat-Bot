@@ -33,14 +33,17 @@ GroupC: 2, 10, 12 -relationship
   a) For a given week, what do you spend time doing? If possible please assign a percentage to each activity.
   b) Now looking more big picture, in the past year, what have you spent your time doing?
   c) Say you were given a year to do whatever you wanted, what would you do?
-  Thank you this has given me a better sense of who you are. I'd now like to ask you more about some of your values.
-
-4.5. Do you have an important value previously chosen you would like to improve on?
+  
+  Response: Something like, “Oh cool! I like to workout too! I really like doing leg lifts. I mean its pretty easy for me since you know, im a computer and don’t actually have legs but still! :) (Choose one of thiers and relate to them about it)
+  
+4.5 Do you have an important value previously chosen you would like to improve on?
 -Yes
 A: What would you do to make you feel better about yourself?
 B: What would you do to make an improvement on your chosen value?
 C: How would you improve the relationship you think is important?
 -No, Go 5
+
+Thank you this has given me a better sense of who you are. I'd now like to ask you more about some of your values.
 
 5. For each value (top 5 important ones or the one chosen)
   a) Why did you pick this as one of your most important values? How did it become one of your core values?
@@ -50,31 +53,32 @@ C: How would you improve the relationship you think is important?
   c) Can you describe an event when you feel you embodied this value or the value had a large impact on influencing the event? (A, B)
      1) How long ago was this? Do events such as this happen often?
      2) How did that make you feel? 
-  
+     3) Do you think that the activities help you achieve your life goal? 
+        -Which particular activities?   
+        
   d) Do you feel your actions and the ways you spend your time reflect this value?
      Yes- good
-No - what is the reason?
+     No - what is the reason?
       - Do you have any idea about how you can better make use of your time? 
-Follow-up: You can go to (websites, resources) to seek help
+     Follow-up: You can go to (websites, resources) to seek help
 
   
-  e) Do you have any goals surrounding this value? Please describe why you want to reach them. (B)
-
-Yes- what is your goal?
-     1) Are you in the progress of achieving this goal? 
-         - If not, what causes the stagnation? What is the result of it? 
-        follow up: You can go to (websites, resources) to seek help
+  e) Do you have any goals surrounding this value? 
   
-  2) What is preventing you from reaching this goal? 
-       follow up: You can go to (websites, resources) to seek help
+      Yes- ask what is your goal? Please describe why you want to reach them.
+      No- Can you come up with a short-term/ long-term goal? Or go to another value
+      
+  1) Are you in the progress of achieving this goal? 
+         - If yes, good job!
+         - If not, what causes the stagnation? What is the result of it? What is preventing you from reaching this goal?
+         1. Can you describe an event when you feel you embodied this value or the value had a large impact on influencing the event?            2. How long ago was this? Do events such as this happen often?    
+         3. How did that make you feel?        
+         4. Are there any that you feel are hindering progress towards your goal  
+          -What is preventing you from reaching this goal/ going along the right path? 
+          
+          follow up: You can go to (websites, resources) to seek help
 
-
-  
-  3) Do you think that the activities help you achieve your goal? 
-     1) Which particular activities? 
-
-  No- Can you come up with a short-term/ long-term goal? What sort of plan do you think you could create to begin on the path to this change?
-
+  No-  Can you come up with a short-term/ long-term goal? sort of plan do you think you could create to begin on the path to this change?
 
 
   f) How would you like to be spending your time differently to better reflect this value? 
@@ -86,8 +90,15 @@ Yes- what is your goal?
      2) How would you have done to change the outcome of the event?
      3) How did that make you feel?
   
+  Deternmining a plan Based on your responses I feel that you would like to change how you spend your time to better reflect the value of X.  
+  1. What sort of plan do you think you could create to begin on the path to this change? 
+  2. Do you think that you will be able to follow through with this plan
+  3. Here is some information to support you in enacting this plan. (Not sure if this is feasible but it would be cool.)
   
-Quantifying questions for the quality of the tool:
+  OR Based on your responses I feel that you wouldn’t like to change how you spend your time to better reflect the value of X
+  1. Why do you think that is? Is it because you already feel that you are representing the value well or is it that you don’t feel strongly enough to enact change?
+  
+  Quantifying questions for the quality of the tool:
   a) On of scale of 1-10, how well do you think reflection Chatbot understands your inputs?
   b) On of scale of 1-10, how much are you motivated to make a change to your life?
 c) On of scale of 1-10, how comfortable for you to answer questions the Chatbot asks?
