@@ -4,27 +4,30 @@ actions:
 - report_behaviour
 - report_self_reflect
 - report_value
+- say_greet
 - utter_ask_behaviour
+- utter_ask_continue_explore_values
 - utter_ask_if_behaviour_help_value
+- utter_ask_what_value_next
 - utter_cheer_up
 - utter_did_that_help
 - utter_didnt_get_value
 - utter_goodbye
-- utter_greet
 - utter_happy
 - utter_value_list
 entities:
 - behaviour
+- deny
 - value_type
 intents:
-- mood_great
 - affirm
+- greet
+- deny
 - self_refl_behvr_value
 - value_focus
-- deny
+- mood_great
 - behaviour_describe
 - ask_for_values
-- greet
 - mood_unhappy
 - goodbye
 slots:
@@ -32,13 +35,19 @@ slots:
     type: text
   self_refl_behvr_value:
     type: text
+  user_info:
+    type: list
   value_type:
     type: text
 templates:
   utter_ask_behaviour:
   - text: Please describe what you spend most of your time doing.
+  utter_ask_continue_explore_values:
+  - text: Do you still want to explore more values?
   utter_ask_if_behaviour_help_value:
   - text: Do you think your behaviours help achieving the value?
+  utter_ask_what_value_next:
+  - text: What value do you want to talk about next?
   utter_cheer_up:
   - image: https://i.imgur.com/nGF1K8f.jpg
     text: 'Here is something to cheer you up:'

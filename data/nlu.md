@@ -4,6 +4,14 @@
 - of course
 - that sounds good
 - correct
+- Yes
+- Yes
+- Yes
+- Yes
+- Yes
+- Yes
+- yES
+- Yes
 
 ## intent:ask_for_values
 - What are the values you can help me focus on?
@@ -36,6 +44,8 @@
 - don't like that
 - no way
 - not really
+- No
+- [No](deny)
 
 ## intent:goodbye
 - bye
@@ -61,6 +71,9 @@
 - hello
 - hi
 - hello
+- Hi
+- Hi
+- hi
 
 ## intent:mood_great
 - perfect
@@ -91,6 +104,11 @@
 - Yes, watching the television helps me bond with my family
 - Yes, painting helps me improve creativity
 - Ya
+- Eating
+- Eating
+- shopping
+- Eating
+- Working
 
 ## intent:value_focus
 - I want to reflect on my [health](value_type)
@@ -124,6 +142,12 @@
 - Help me reflect on [family](value_type)
 - Can you help me focus on [creativity](value_type)?
 - [Health](value_type)
+- [Health](value_type)
+- [Health](value_type)
+- [Wealth](value_type)
+- [Wealth](value_type)
+- [hEALTH](value_type)
+- [Wealth](value_type)
 
 ## synonym:friendship
 - friends
