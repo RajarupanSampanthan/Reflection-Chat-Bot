@@ -1,5 +1,5 @@
 /__pycache__/*
 /models/*
-story_graph.dot*
+*.dot
 .DS_STORE
 *.db

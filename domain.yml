@@ -16,6 +16,7 @@ actions:
 - utter_goodbye
 - utter_happy
 - utter_value_list
+- utter_greet
 entities:
 - behaviour
 - deny
@@ -30,8 +31,6 @@ intents:
 - stop
 - mood_great
 - affirm
-- greet
-- deny
 - self_refl_behvr_value
 - deny
 #- behaviour_describe

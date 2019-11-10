@@ -28,7 +28,9 @@
 - don't like that
 - no way
 - not really
-
+- No, I don't have any goals for this value
+- no
+- no
 
 ## intent:goodbye
 - bye
@@ -54,6 +56,7 @@
 - hello
 - hi
 - hello
+- hi
 
 ## intent:inform
 - I go to the gym
@@ -128,6 +131,20 @@
 - I believe I am in the progress of achieving it.
 - Lack of experience prevents me from achieving this goal at the moment
 - studying and develop my career will definitely help
+- I spend 50% of my time studying, the rest 50% I spend for gym
+- I was working to develop my career, excercise regularily to improve my health
+- I would travel to Hawaii
+- I chose this value because I want to live a luxiourous live
+- By saving up my earnings
+- this value influenced me to prevent myself to spend too much money on unnecessary stuff
+- This happens often
+- Feels good to hold myself back from my urges
+- I think very well.
+- I would start looking for a job so I don't have a gap after I graduate.
+- Because I spend too much time on my studies
+- the situation was I spend too much money on games
+- I desire to play game prevented my to prioritize this value in the situation
+- I would play less video games
 
 ## intent:self_refl_behvr_value
 - Yes, exercising helps maintaining a healthy body
@@ -197,6 +214,7 @@
 - [Responsibility](value_type)
 - [Knowledge](value_type)
 - [Acceptance](value_type)
+- [wealth](value_type)
 
 ## synonym:friendship
 - friends
