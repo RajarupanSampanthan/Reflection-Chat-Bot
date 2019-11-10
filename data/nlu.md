@@ -1,0 +1,207 @@
+## intent:affirm
+- yes
+- indeed
+- of course
+- that sounds good
+- correct
+
+## intent:ask_for_values
+- What are the values you can help me focus on?
+- Can you give me a list of values where I can choose from?
+- Which values can you help me reflect?
+- Which values do you support?
+- Which values do you support?
+- which are the values I can choose?
+
+## intent:deny
+- no
+- never
+- I don't think so
+- don't like that
+- no way
+- not really
+- no
+- no
+- no
+- no
+
+## intent:goodbye
+- bye
+- goodbye
+- see you around
+- see you later
+
+## intent:greet
+- hey
+- hello
+- hi
+- good morning
+- good evening
+- hey there
+- hi there
+- Hello Idunn
+- hello there
+- hey
+- hey there
+- hi
+- hello
+- hello
+- hello
+- hi
+- hello
+- hello
+- hello
+- hello
+- hello
+- hey
+- hello
+- hi
+- Hi
+
+## intent:inform
+- I go to the gym
+- I would watch tv whole day
+- I go to school and work on my projects. I study for exams, go to the gym.
+- I spend most of my time working.
+- I would travel to Asia
+- I spend time working on my project, studying, going to the gym, and playing video games.
+- I have been working most of my time, travel with my family, studying and playing video games.
+- I would travel to Europe with friends or family.
+- I study and go to school in most days of my week. I also go to the gym when I am free.
+- I spent most of my time in the past year working. I also travelled with my family few times. Go to the gym when I am free.
+- I would travel to Europe or Asia with friends.
+- I choose this value because I am broke, and I would like to save some money for my future.
+- By saving up money earned.
+- When I was deciding whether to travel during vacation, since it would be quite a spending.
+- yes it happens all the time when I decide to buy something.
+- It makes me feel aware of my spendings but also anxious.
+- I think my actions reflect well with the value, since I was working to save money and also pursuing a degree that will help me get more opportunity in the future.
+- I would be starting to look for a job sooner so I can start earning money.
+- Because it takes time and I have studies to work on.
+- online shopped something I don't need.
+- My desire to have fun prevents me to prioritize this value.
+- I would stop going online, or get rid of my online shopping account.
+- I study
+- I work
+- I would sleep
+- I pick this value because I want to live longer
+- by going to the gym frequently
+- yes, I want to be illness free in my whole life
+- yes, I go to gym
+- I haven't died yet.
+- Going to the gym. being physically strong keeps the sickness away
+- I spend most of my time excercising
+- I play video game most of my time
+- I spend most of my time watching tv
+- I spend most of my time playing video games
+- I spend my time watching tv
+- I watch tv
+- I spend most of my time exercising.
+- I spend most of my time playing the piano
+- I spend most of my time working out at the gym
+- I spend most of my time making music
+- I spend most of my time working
+- I spend most of my time watching the television
+- I spend most of my time painting
+- I spend 40% of my time studying, 40% sleeping and eating, 10% spending time with friends, and 10% going to the gym.
+- I spend most of my time working.
+- I would travel to Asia and visit my family and old friends.
+- This became an important value of mine because I want people to support and accept me.
+- I express this value by spending time with friends and make more.
+- Yes, I want to have close friends that we will still see each other even we grow old
+- I think so, I am getting along with my friends well at the moment.
+- My studies are taking a lot of my time from my friends.
+- Spending time with them would definitely help
+- Studying and assignments 60%, watching tv 10%, playing guitar 5%, spending time with friends 25%
+- Dating 20%, developing career 30%, education 30%, improving fitness 20%
+- Travel across Europe and discover myself
+- Feel that I need a better balance in my life since it is too focused on education. This is one area in which I am lacking the most.
+- I try to put effort into every relationship I have and be friendly to others
+- yes, make 5 new friends this year
+- course work takes up a lot of time and makes it hard to arrange time for social activities
+- course work
+- Dating and spending time with friends
+- Studying and assignments
+- 50% studying, 30% sleeping and eating, 20% going to the gym.
+- I focused on career development, maintaining a good relationship with family and friends
+- I would learn a new skill such as martial arts or fine arts.
+- I picked this as an important value because I want to be able to afford a house
+- I express this value by saving up my earnings.
+- Yes, my goal is to earn 200k a year
+- I believe I am in the progress of achieving it.
+- Lack of experience prevents me from achieving this goal at the moment
+- studying and develop my career will definitely help
+
+## intent:stop
+- /stop
+- /stop
+
+## intent:value_focus
+- I want to reflect on my [health](value_type)
+- I want to focus on [wealth](value_type)
+- Can you help me improve my relationship with my [family](value_type)
+- I want to achieve [world peace](value_type)
+- I want to make more [friends](value_type:friendship)
+- Please help me with focusing on my [friendship](value_type)
+- I want to focus on [wealth](value_type)
+- Can you help me with [health](value_type) today?
+- I want to achieve [world peace](value_type)
+- I want to reflect on [family](value_type)
+- [Family](value_type) is important to me, can you help me focus on it?
+- I want to focus on [Friendship](value_type)
+- Help me focus on [wealth](value_type), please.
+- Help me focus on [health](value_type)
+- Please help me with [love](value_type)
+- In that case, can you help me with [friendship](value_type)?
+- help me focus on [wealth](value_type)
+- please help me with [wealth](value_type)
+- I want to reflect on [health](value_type)
+- I want to focus on [wealth](value_type)
+- help me with [health](value_type)
+- I want to focus on [health](value_type)
+- Can you help me focus on [hope](value_type)?
+- Please help me with [love](value_type)
+- Help me with [wealth](value_type), then.
+- Please help me focus on [health](value_type)
+- Can you help me with reflecting on [family](value_type)?
+- Please help me focus on [wealth](value_type)
+- Help me reflect on [family](value_type)
+- Can you help me focus on [creativity](value_type)?
+- [Health](value_type)
+- [health](value_type)
+- help me with [wealth](value_type)
+- [wealth](value_type)
+- [wealth](value_type)
+- [health](value_type)
+- I want to focus on [friendship](value_type)
+- [friendship](value_type)
+- [wealth](value_type)
+- [Achievement](value_type)
+- [Family](value_type)
+- [Fun](value_type)
+- [Mindfulness](value_type)
+- [Independence](value_type)
+- [Purpose](value_type)
+- [Self-esteem](value_type)
+- [Virtue](value_type)
+- [romance](value_type)
+- [Responsibility](value_type)
+- [Knowledge](value_type)
+- [Acceptance](value_type)
+
+## synonym:friendship
+- friends
+
+## lookup:value_type
+- friendship
+- family
+- accpetance
+- health
+- wealth
+- world peace
+- beauty
+- creativity
+- hope
+- justice
+- knowledge
+- romance
