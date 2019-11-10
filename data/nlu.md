@@ -4,6 +4,14 @@
 - of course
 - that sounds good
 - correct
+- Yes
+- Yes
+- Yes
+- Yes
+- Yes
+- Yes
+- yES
+- Yes
 
 ## intent:ask_for_values
 - What are the values you can help me focus on?
@@ -20,10 +28,7 @@
 - don't like that
 - no way
 - not really
-- no
-- no
-- no
-- no
+
 
 ## intent:goodbye
 - bye
@@ -49,14 +54,6 @@
 - hello
 - hi
 - hello
-- hello
-- hello
-- hello
-- hello
-- hey
-- hello
-- hi
-- Hi
 
 ## intent:inform
 - I go to the gym
@@ -132,8 +129,20 @@
 - Lack of experience prevents me from achieving this goal at the moment
 - studying and develop my career will definitely help
 
+## intent:self_refl_behvr_value
+- Yes, exercising helps maintaining a healthy body
+- No, my family does not support me with making music
+- Yes, working helps me make money
+- Yes, watching the television helps me bond with my family
+- Yes, painting helps me improve creativity
+- Ya
+- Eating
+- Eating
+- shopping
+- Eating
+- Working
+
 ## intent:stop
-- /stop
 - /stop
 
 ## intent:value_focus
