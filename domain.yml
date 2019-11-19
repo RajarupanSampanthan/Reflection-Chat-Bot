@@ -1,29 +1,3 @@
-%YAML 1.1
----
-actions:
-- report_behaviour
-- report_self_reflect
-- report_value
-- say_greet
-- structured_q
-- utter_ask_behaviour
-- utter_ask_continue_explore_values
-- utter_ask_if_behaviour_help_value
-- utter_ask_what_value_next
-- utter_cheer_up
-- utter_did_that_help
-- utter_didnt_get_value
-- utter_goodbye
-- utter_happy
-- utter_value_list
-- utter_greet
-entities:
-- behaviour
-- deny
-- value_type
-forms:
-- structured_q_form_behaviour
-- structured_q_form_value
 intents:
 - value_focus
 - greet
@@ -33,43 +7,34 @@ intents:
 - affirm
 - self_refl_behvr_value
 - deny
-#- behaviour_describe
 - ask_for_values
 - mood_unhappy
 - goodbye
+entities:
+- behaviour
+- deny
+- value_type
 slots:
   behaviour:
     type: text
-
-  # behaviour slots
   behaviour_1:
     type: text
   behaviour_2:
     type: text
   behaviour_3:
     type: text
-
-  # common value slots
+  requested_slot:
+    type: unfeaturized
+  self_refl_behvr_value:
+    type: text
+  user_info:
+    type: list
   value_1:
     type: text
   value_2:
     type: text
-  value_goal: # description of goals if yes, else no
+  value_goal:
     type: text
-
-  # value slots with goals
-  value_goal_y_1:
-    type: text
-  value_goal_y_1.1:
-    type: text
-  value_goal_y_2:
-    type: text
-  value_goal_y_3:
-    type: text
-  value_goal_y_4:
-    type: text
-
-  # value slots with no goals
   value_goal_n_1:
     type: text
   value_goal_n_2:
@@ -88,24 +53,23 @@ slots:
     type: text
   value_goal_n_9:
     type: text
-
-  requested_slot:
-    type: unfeaturized
-  self_refl_behvr_value:
+  value_goal_y_1:
     type: text
-  user_info:
-    type: list
+  value_goal_y_1.1:
+    type: text
+  value_goal_y_2:
+    type: text
+  value_goal_y_3:
+    type: text
+  value_goal_y_4:
+    type: text
   value_type:
     type: text
 templates:
   utter_ask_behaviour:
   - text: Please describe what you spend most of your time doing.
-
   utter_ask_continue_explore_values:
   - text: Do you still want to explore more values?
-
-
-  # behaviour questions
   utter_ask_behaviour_1:
   - text: For a given week, what do you spend time doing? If possible please assign
       a percentage to each activity.
@@ -115,49 +79,49 @@ templates:
   utter_ask_behaviour_3:
   - text: Say you were given a year to do whatever you wanted, what would you do?
   utter_submit_behaviour:
-  - text: Thank you this has given me a better sense of who you are. I'd now like to ask you more about some of your values.
-
-  # common questions to ask for value
+  - text: Thank you this has given me a better sense of who you are. I'd now like
+      to ask you more about some of your values.
   utter_ask_value_1:
-  - text: Why did you pick this as one of your most important values? How did it become one of your core values?
+  - text: Why did you pick this as one of your most important values? How did it become
+      one of your core values?
   utter_ask_value_2:
   - text: How would you say you express this value in your life?
   utter_ask_value_goal:
-  - text: Do you have any goals surrounding this value? (Please answer yes and describe the goal(s), anwser no if none).
-  
-  # questions if user has goals towards the value
+  - text: Do you have any goals surrounding this value? (Please answer yes and describe
+      the goal(s), anwser no if none).
   utter_ask_value_goal_y_1:
-  - text: Are you in the progress of achieving this goal? 
+  - text: Are you in the progress of achieving this goal?
   utter_ask_value_goal_y_1.1:
-  - text: If not, what causes the stagnation? What is the result of it? 
+  - text: If not, what causes the stagnation? What is the result of it?
   utter_ask_value_goal_y_2:
   - text: What is preventing you from reaching this goal?
   utter_ask_value_goal_y_3:
-  - text: Which particular activities we talked about help you achieve your goal? 
+  - text: Which particular activities we talked about help you achieve your goal?
   utter_ask_value_goal_y_4:
   - text: Are there any that you feel are hindering progress towards your goal?
-
-  #questions if user has no goals towards the value
   utter_ask_value_goal_n_1:
-    - text: Please describe an event when you feel you embodied this value or the value had a large impact on influencing the event?
+  - text: Please describe an event when you feel you embodied this value or the value
+      had a large impact on influencing the event?
   utter_ask_value_goal_n_2:
-    - text: How long ago was this? Do events such as this happen often?
+  - text: How long ago was this? Do events such as this happen often?
   utter_ask_value_goal_n_3:
-    - text: How did that make you feel?
+  - text: How did that make you feel?
   utter_ask_value_goal_n_4:
-    - text: How well do you feel your actions and how you spend your time reflect this value?
+  - text: How well do you feel your actions and how you spend your time reflect this
+      value?
   utter_ask_value_goal_n_5:
-    - text: How would you like to be spending your time differently to better reflect this value? 
+  - text: How would you like to be spending your time differently to better reflect
+      this value?
   utter_ask_value_goal_n_6:
-    - text: Why isn't this the case?
+  - text: Why isn't this the case?
   utter_ask_value_goal_n_7:
-    - text: Were there any events that you felt negatively because you didn't prioritize this value?
+  - text: Were there any events that you felt negatively because you didn't prioritize
+      this value?
   utter_ask_value_goal_n_8:
-    - text: What prevented you from prioritizing this value?
+  - text: What prevented you from prioritizing this value?
   utter_ask_value_goal_n_9:
-    - text: How would you have done to change the outcome of the event?
-
-  utter_submit_value: 
+  - text: How would you have done to change the outcome of the event?
+  utter_submit_value:
   - text: value quesions done!
   utter_ask_if_behaviour_help_value:
   - text: Do you think your behaviours help achieving the value?
@@ -179,7 +143,26 @@ templates:
       I help you focus today?
   utter_happy:
   - text: Great carry on!
-
   utter_value_list:
   - text: The available values now are Family, Friendship, Health, Wealth and World
       Peace.
+actions:
+- report_behaviour
+- report_self_reflect
+- report_value
+- say_greet
+- structured_q
+- utter_ask_behaviour
+- utter_ask_continue_explore_values
+- utter_ask_if_behaviour_help_value
+- utter_ask_what_value_next
+- utter_cheer_up
+- utter_did_that_help
+- utter_didnt_get_value
+- utter_goodbye
+- utter_happy
+- utter_value_list
+- utter_greet
+forms:
+- structured_q_form_behaviour
+- structured_q_form_value

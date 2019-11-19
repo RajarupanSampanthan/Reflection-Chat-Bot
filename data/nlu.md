@@ -145,6 +145,7 @@
 - the situation was I spend too much money on games
 - I desire to play game prevented my to prioritize this value in the situation
 - I would play less video games
+- none of them helps me achieve this goal
 
 ## intent:self_refl_behvr_value
 - Yes, exercising helps maintaining a healthy body
@@ -219,16 +220,3 @@
 ## synonym:friendship
 - friends
 
-## lookup:value_type
-- friendship
-- family
-- accpetance
-- health
-- wealth
-- world peace
-- beauty
-- creativity
-- hope
-- justice
-- knowledge
-- romance
