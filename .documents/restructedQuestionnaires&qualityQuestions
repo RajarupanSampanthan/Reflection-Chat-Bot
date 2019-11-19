@@ -22,6 +22,7 @@ GroupB: 1, 3, 6, 13, 14, 9, 7, 11
 GroupC: 2, 10, 12 -relationship
 
 Questions help recognize values :
+(1)
 You're moving to a new city, carrying money, friends, family, achievements, health, romance, knowledge. (or other groups of values)
 When you are crossing a river, it turns out the boat is overweight.
 You have to drop 3 of them in order to make it safely. Which ones will you choose?
@@ -29,6 +30,7 @@ You have to drop 3 of them in order to make it safely. Which ones will you choos
 You're only allowed to carry three of the remaining to live the rest of your life, which three will you choose?
 
 Take a closer look at stuff you drop at the first step, why do you abandon them?
+
 
 1. Please group the following values into 1 of 3 categories; most important, important, least important
 
@@ -124,20 +126,48 @@ Thank you this has given me a better sense of who you are. I'd now like to ask y
   
   1. Which relationship in your life is most important to you? Please rank the importance of family, freindship, and romance.
   2. List the time percentage you spent with your families, friends, and girlfriend/boyfriend in recent two weeks.
-     Rank your level of enjoyment 1-10 spending time with families, friends, and girlfriend/boyfriend     
+     Rank your level of enjoyment 1-10 spending time with families, friends, and girlfriend/boyfriendResponses were 
+     (provided on a 1–10 scale with 1p not at all and 10p very much.)
      Does your rankings align with your time spend?
      Yes- good for you!
      No- Do you have any idea how you can fix this? / Why do you think this happens?
-  3. Do you have a plan to maintain a better relationships with your families/friends/ girlfriend or boyfriend?
+  3. Do you have a plan to maintain a better relationships with your families/friends/ girlfriend or boyfriend? 
       Yes- What is your plan / What will you change?
       No- Can you come up with a short plan for the coming month?
-  4. What is your conflict resolution style? Compomising, negociating or attacking style? 
+  4. Do you think relationships are important to you?
+      yes- general quesrions
+      no- break
+  5. What is your conflict resolution style? Compomising, negociating or attacking style? 
      Do you think it help you get what you want?
      Yes, it works for us. - Good job!
      No. - What can you change?
-  
-  
-  
+   
+   *Questions for self:
+   1. Please rank in 1-10 scale how strong your level of self-esteem/ self-acceptance is
+      If the scole larger than 5 - Do you agree self-esteem/ self-acceptance affects your life positively?
+      yes- Do you agree it is an important value to you? 
+           yes - ask general value questions
+           no - break
+      no- Can you give an example when it affects you negatively?
+      If the scole less than 5 - Can you tell me the reason why you rate it 1/2/3/4 (user ans)? 
+      
+   2. Please rank in 1-10 scale how strong your level of independence/ responsibility /virtue/ morality is 
+      If the scole larger than 5 - 
+      Can you describe a situation showing your independence/ responsibility/ morality/ virtue? 
+      Do you agree it is an important value to you? 
+           yes - ask general value questions
+           no - break     
+      If the scole less than 5 - 
+      Do you think independence/ responsibility/morality affects you positively or negatively on your happiness of life? 
+   3. Please rank in 1-10 scale of the importance of purpose/ knowledge 
+      What do you think your life will be without them?
+   4. Please rate your health/ mental health condition from 1-10 scale
+      If the score larger than 5- Do you agree health is very important value?
+      yes- general questions
+      no- why?
+      If the score less than five- Do you think health affects your life negatively?
+   
+    
   Quantifying questions for the quality of the tool:
   a) On of scale of 1-10, how well do you think reflection Chatbot understands your inputs?/ Do you think reflection Chatbot understands your inputs?
   b) On of scale of 1-10, how much are you motivated to make a change to your life?/ Are you motivated to make a change to your life?  
