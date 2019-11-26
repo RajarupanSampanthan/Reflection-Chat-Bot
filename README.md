@@ -6,3 +6,17 @@ This project is to create a chatbot where it "chats" with the user through text 
 This chatbot is using the framework rasa. [Rasa home page](https://rasa.com/). This [github project](https://github.com/JustinaPetr/Weatherbot_Tutorial/tree/master/Full_Code_Latest).
 
 
+To run the django server (while in .../frontend/ReflectChatbot) This lets you run the rest calls:
+	python manage.py runserver
+
+From the root, this starts the react server. You can view the site by typing in http://localhost:8000/ into your browser:
+	npm run dev
+
+To run rasa chatbot:
+	In one terminal:
+		rasa run actions
+	In another terminal:
+		rasa train
+		rasa shell
+		For rest calls (instead of rasa shell):
+			rasa run -m models --enable-api --cors "*" --debug
