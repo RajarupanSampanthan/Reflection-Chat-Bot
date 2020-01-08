@@ -1,22 +1,17 @@
 intents:
 - value_focus
 - greet
-- inform
+- inform:
+    use_entities: []
 - stop
-- mood_great
 - affirm
-- self_refl_behvr_value
 - deny
 - ask_for_values
-- mood_unhappy
 - goodbye
+- explain
 entities:
-- behaviour
-- deny
 - value_type
 slots:
-  behaviour:
-    type: text
   behaviour_1:
     type: text
   behaviour_2:
@@ -25,8 +20,6 @@ slots:
     type: text
   requested_slot:
     type: unfeaturized
-  self_refl_behvr_value:
-    type: text
   user_info:
     type: list
   value_1:
@@ -55,7 +48,7 @@ slots:
     type: text
   value_goal_y_1:
     type: text
-  value_goal_y_1.1:
+  value_goal_y_1_1:
     type: text
   value_goal_y_2:
     type: text
@@ -66,8 +59,6 @@ slots:
   value_type:
     type: text
 templates:
-  utter_ask_behaviour:
-  - text: Please describe what you spend most of your time doing.
   utter_ask_continue_explore_values:
   - text: Do you still want to explore more values?
   utter_ask_behaviour_1:
@@ -91,8 +82,8 @@ templates:
       the goal(s), anwser no if none).
   utter_ask_value_goal_y_1:
   - text: Are you in the progress of achieving this goal?
-  utter_ask_value_goal_y_1.1:
-  - text: If not, what causes the stagnation? What is the result of it?
+  utter_ask_value_goal_y_1_1:
+  - text: What causes the stagnation? What is the result of it?
   utter_ask_value_goal_y_2:
   - text: What is preventing you from reaching this goal?
   utter_ask_value_goal_y_3:
@@ -123,15 +114,6 @@ templates:
   - text: How would you have done to change the outcome of the event?
   utter_submit_value:
   - text: value quesions done!
-  utter_ask_if_behaviour_help_value:
-  - text: Do you think your behaviours help achieving the value?
-  utter_ask_what_value_next:
-  - text: What value do you want to talk about next?
-  utter_cheer_up:
-  - image: https://i.imgur.com/nGF1K8f.jpg
-    text: 'Here is something to cheer you up:'
-  utter_did_that_help:
-  - text: Did that help you?
   utter_didnt_get_value:
   - text: I didn't get the value you want to focus on, or the value you said isn't
       supported yet. The current values we can help you focus on are Family, Friendship,
@@ -141,28 +123,37 @@ templates:
   utter_greet:
   - text: Hi! Welcome the Reflection Chatbot app. My name is Idunn. Which value can
       I help you focus today?
-  utter_happy:
-  - text: Great carry on!
   utter_value_list:
   - text: The available values now are Family, Friendship, Health, Wealth and World
       Peace.
+  utter_explain_behaviour:
+  - text: The reason we are asking you about your behaviours is because it helps 
+      you to later think about whether these actions reflect well with the value you want to focus on.
+
+  utter_explain_value:
+  - text: The reason we are asking you about how you feel about the value you have chosen
+      is to help you to reflect on it. These questions should help you think about whether the things 
+      you do, your behaviours match the essence of the value
+
+  utter_ask_continue:
+  - text: Do you want to continue?
+
+  utter_doesnot_work:
+  - text: try again
 actions:
-- report_behaviour
-- report_self_reflect
 - report_value
 - say_greet
-- structured_q
-- utter_ask_behaviour
 - utter_ask_continue_explore_values
-- utter_ask_if_behaviour_help_value
 - utter_ask_what_value_next
-- utter_cheer_up
-- utter_did_that_help
 - utter_didnt_get_value
 - utter_goodbye
-- utter_happy
 - utter_value_list
 - utter_greet
+- utter_explain_behaviour
+- utter_explain_value
+- utter_doesnot_work
+- utter_ask_continue
 forms:
 - structured_q_form_behaviour
 - structured_q_form_value
+- structured_q_form_value_ex

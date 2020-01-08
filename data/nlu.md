@@ -12,6 +12,13 @@
 - Yes
 - yES
 - Yes
+- yes
+- yes
+- yes
+- yes
+- yes
+- yes
+- yes
 
 ## intent:ask_for_values
 - What are the values you can help me focus on?
@@ -31,12 +38,39 @@
 - No, I don't have any goals for this value
 - no
 - no
+- no
+- no
+- no
+- no
+- no
+- no
+- no
+- no
+- no
+- no
+- no
+- no
+- no
+- no
+- not at all
+
+## intent:explain
+- Why do you need to know this?
+- Why should I tell you this?
+- How is knowing this useful?
+- Why do you need this information?
+- How is this information going to help?
+- can you explain?
+- can you explain?
 
 ## intent:goodbye
 - bye
 - goodbye
 - see you around
 - see you later
+- goodbye
+- bye
+- Goodbye
 
 ## intent:greet
 - hey
@@ -57,6 +91,20 @@
 - hi
 - hello
 - hi
+- hello
+- hi
+- hi
+- hi
+- hi
+- hi
+- hello
+- hi
+- hi
+- j
+- hi
+- huh?
+- hi
+- hey
 
 ## intent:inform
 - I go to the gym
@@ -146,22 +194,62 @@
 - I desire to play game prevented my to prioritize this value in the situation
 - I would play less video games
 - none of them helps me achieve this goal
-
-## intent:self_refl_behvr_value
-- Yes, exercising helps maintaining a healthy body
-- No, my family does not support me with making music
-- Yes, working helps me make money
-- Yes, watching the television helps me bond with my family
-- Yes, painting helps me improve creativity
-- Ya
-- Eating
-- Eating
-- shopping
-- Eating
-- Working
-
-## intent:stop
-- /stop
+- I spend 40% studying, 40% eating and sleeping, 20% exercising
+- I focused on developing my career and maintaining a good relationship with my friends.
+- I would travel to Asia to meet my family and friends.
+- I go to work and read book when I'm free
+- I focused on developing my career
+- I would travel to Europe with my friends
+- I pick this because I wanna travel
+- by saving up my earning
+- I study
+- I study
+- I would travel to New York
+- I play games
+- I play games
+- I would play games
+- I study
+- I sleep, eat, study, and play video games
+- I have not done anything meaningful
+- I would learn a new skill such as music composing
+- I eat, sleep and watch tv
+- I have not done anything meaningful
+- I would travel to Asia
+- because I want to enjoy the world
+- by going to the gym
+- I eat, sleep, nothing else
+- I have done nothing
+- I would sleep
+- stop
+- I eat, sleep
+- I have done nothing meaningful
+- I would sleep
+- because I wanna be rich
+- by stealing from others
+- I work and hang out with friends
+- I imporved my relationship with my friends
+- I would travel to Europe
+- because friends helped me, and I want to have good friends
+- by hanging out with them
+- My friends talked me out of suicide
+- about a year ago, only happened once
+- that made me feel cared
+- pretty well
+- I would not
+- because I don't feel the need to change my actions
+- When I needed to prepare for my exam and didn't go to a friend's party
+- my study
+- I would not change anything, my exam was more important at the time
+- I eat sleep and play video games
+- developing my career
+- I would travel
+- because I wanna be rich
+- by saving up money
+- yes, I want to be the richest person on the planet
+- my laziness
+- also my laziness
+- developing my career
+- mostly just me
 
 ## intent:value_focus
 - I want to reflect on my [health](value_type)
@@ -216,7 +304,19 @@
 - [Knowledge](value_type)
 - [Acceptance](value_type)
 - [wealth](value_type)
+- [health](value_type)
+- [wealth](value_type)
+- [health](value_type)
+- [health](value_type)
+- [wealth](value_type)
+- [wealth](value_type)
+- [wealth](value_type)
+- [health](value_type)
+- [wealth](value_type)
+- p
+- [wealth](value_type)
+- [friendship](value_type)
+- [wealth](value_type)
 
 ## synonym:friendship
 - friends
-
