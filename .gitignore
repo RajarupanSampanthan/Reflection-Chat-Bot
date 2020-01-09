@@ -4,3 +4,4 @@ story_graph.dot
 .DS_STORE
 *.db
 *bak.*
+/reflection-chatbot-ui/node_modules
