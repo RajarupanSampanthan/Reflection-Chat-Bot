@@ -1,6 +1,7 @@
 import React from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
+import './ConsentForm.css';
 
 const ConsentForm = ({ handleClose, show }) => {
     return (
@@ -25,7 +26,7 @@ const ConsentForm = ({ handleClose, show }) => {
         </p>
             </Modal.Body>
             <Modal.Footer>
-                <Button onClick={handleClose}>I Agree</Button>
+                <Button className="agreeBtn" onClick={handleClose}>I Agree</Button>
             </Modal.Footer>
         </Modal>
     );

@@ -1,4 +1,4 @@
-import { FETCH_MESSAGES, SEND_MESSAGE } from './types';
+import { FETCH_MESSAGES, SEND_MESSAGE, SET_LOADING } from './types';
 import axios from 'axios';
 
 export const fetchMessages = () => dispatch => {
@@ -16,9 +16,20 @@ export const fetchMessages = () => dispatch => {
     });
 };
 
+export const setLoading = () => dispatch => {
+    dispatch({
+        type: SET_LOADING,
+        payload: null
+    });
+};
+
 export const sendMessage = (msgData) => dispatch => {
     // Actually posts to http://localhost:5005/webhooks... but we used ngrok to make it accessible via website
-    axios.post('https://ba85e1fd.ngrok.io/webhooks/rest/webhook', msgData)
+    dispatch({
+        type: SET_LOADING,
+        payload: null
+    });
+    axios.post('http://localhost:5005/webhooks/rest/webhook', msgData)
         .then(res => {
             let msgText = "";
             res.data.map((newMsg) => {

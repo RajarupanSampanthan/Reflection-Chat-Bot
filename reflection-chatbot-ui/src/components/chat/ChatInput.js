@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { sendMessage } from '../../actions/messageActions';
+import './ChatInput.css';
 
 class ChatInput extends Component {
     constructor(props) {
@@ -18,30 +19,35 @@ class ChatInput extends Component {
     };
 
     sendMessage = () => {
-        const {receiver, message } = this.state;
+        const { receiver, message } = this.state;
         let sender = this.props.user;
         const rasaMsg = { sender, receiver, message };
         //Send message to rasa and get chatbot response
         this.props.sendMessage(rasaMsg);
-        this.setState({message:''});
+        this.setState({ message: '' });
     };
 
     render() {
         return (
             <React.Fragment>
-                <h2>User Input textbox</h2>
-                <input
-                    type="text"
-                    name="message"
-                    onChange={this.onChange}
-                    value={this.state.message}
-                    onKeyPress={event => {
-                        if (event.key === 'Enter') {
-                            this.sendMessage();
-                        };
-                    }}
-                />
-                <button onClick={this.sendMessage} className="btn btn-primary">Submit</button>
+                <div className="chatInput">
+                    <textarea
+                        className="textArea"
+                        type="text"
+                        name="message"
+                        placeholder="Type your message..."
+                        onChange={this.onChange}
+                        value={this.state.message}
+                        onKeyPress={event => {
+                            if (event.key === 'Enter') {
+                                event.preventDefault();
+                                this.sendMessage();
+                            };
+                        }}
+                    />
+                    <button onClick={this.sendMessage} className="btn btn-primary submitBtn">Submit</button>
+                </div>
+
             </React.Fragment>
         );
     };

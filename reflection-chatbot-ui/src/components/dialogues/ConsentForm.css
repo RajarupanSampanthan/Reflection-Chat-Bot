@@ -1,0 +1,15 @@
+.agreeBtn {
+    background-color: #39c6b6;
+    color: white;
+    border-color: #39c6b6;
+    border-width: 2px;
+    font-weight: bold;
+}
+
+.agreeBtn:hover {
+    background-color: white;
+    color: #39c6b6;
+    border-color: #39c6b6;
+    font-weight: bold;
+    border-width: 2px;
+}

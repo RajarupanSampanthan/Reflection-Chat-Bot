@@ -3,6 +3,13 @@
   margin: auto;
 }
 
+.App-header {
+  color: white;
+  background-color: #39c6b6;
+  height: 5vh;
+  font-weight: bolder;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;

@@ -17,9 +17,9 @@ class App extends Component {
   render() {
     return (
       <Provider store={store}>
-        <div className="App">
+        <div>
           <header className="App-header">
-            
+            <h2>Reflect Chatbot ECE496 2019 - 2020</h2>
           </header>
           <ConsentForm show={this.state.showConsentForm} handleClose={this.closeConsentForm} />
           <ChatPanel />
