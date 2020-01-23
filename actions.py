@@ -64,7 +64,7 @@ class ActionCheckValueNum(Action):
 		for value in tracker.get_latest_entity_values('value'):
 			num_value += 1
 			value_list.append(value)
-		dispatcher.utter_message(",".join(value_list)) # TODO - delete
+		#dispatcher.utter_message(",".join(value_list)) # TODO - delete
 
 		if num_value == 1:
 			slot_num_value = 'one'
@@ -89,7 +89,7 @@ class ActionExplainValue(Action):
 		for value in tracker.get_latest_entity_values('value'):
 			num_value += 1
 			value_list.append(value)
-		dispatcher.utter_message(",".join(value_list)) # TODO - delete
+		#dispatcher.utter_message(",".join(value_list)) # TODO - delete
 
 		if num_value == 0:
 			dispatcher.utter_message("A value is a person's belief or judgement of what is important in life. " + \
@@ -139,7 +139,7 @@ class ActionCheckBehaviourNum(Action):
 		for action in tracker.get_latest_entity_values('activity'):
 			num_action += 1
 			action_list.append(action)
-		dispatcher.utter_message(",".join(action_list)) # TODO - delete
+		#dispatcher.utter_message(",".join(action_list)) # TODO - delete
 
 		if num_action == 3:
 			return [SlotSet('num_act', 'three'), SlotSet('act_1', action_list[0]), SlotSet('act_2', action_list[1]), SlotSet('act_3', action_list[2])]
