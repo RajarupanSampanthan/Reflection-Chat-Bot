@@ -1,3 +1,31 @@
+# This files contains your custom actions which can be used to run
+# custom Python code.
+#
+# See this guide on how to implement these action:
+# https://rasa.com/docs/rasa/core/actions/#custom-actions/
+
+
+# This is a simple example for a custom action which utters "Hello World!"
+
+# from typing import Any, Text, Dict, List
+#
+# from rasa_sdk import Action, Tracker
+# from rasa_sdk.executor import CollectingDispatcher
+#
+#
+# class ActionHelloWorld(Action):
+#
+#     def name(self) -> Text:
+#         return "action_hello_world"
+#
+#     def run(self, dispatcher: CollectingDispatcher,
+#             tracker: Tracker,
+#             domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+#
+#         dispatcher.utter_message("Hello World!")
+#
+#         return []
+
 
 from __future__ import absolute_import
 from __future__ import division
@@ -8,484 +36,121 @@ from rasa_sdk.events import SlotSet
 from rasa_sdk.forms import FormAction
 from rasa_sdk import Tracker
 
-from nltk.corpus import stopwords
-import string 
+value_meaning_dict = {
+	"achievement" 		: "Achievement - to have important accomplishment",
+	"family" 			: "Family - to have a happy, loving family",
+	"fun" 				: "Fun - to play and have fun",
+	"health" 			: "Health -  to be physically well and health",
+	"mindfulness" 		: "Mindfulness - to live conscious and mindful of the present moment",
+	"independence" 		: "Independence -  to be free from depending on others",
+	"purpose" 			: "Purpose - to have meaning and direction in my life", 
+	"self-esteem" 		: "Self-esteem - to feel good about myself", 
+	"wealth" 			: "Wealth - to have plenty of money",
+	"friendship" 		: "Friendship -  to have close, supportive friends", 
+	"morality" 			: "Morality - to live a morally pure and excellent life",
+	"romance" 			: "Romance -  to have intense, exciting love in my life",
+	"responsibility" 	: "Responsibility - to make and carry out responsible decision",
+	"knowledge" 		: "Knowledge - to learn and contribute valuable knowledge",
+	"acceptance" 		: "Acceptance - to be accepted as I am"
+}
 
-import os
-import json
-
-FILE_PATH = os.path.dirname(__file__)
-
-def getListString(givenList):
-	if len(givenList) == 0:
-		return "\n There are no values in the value list\n"
-	text = "The values are " + ", ".join(givenList);	
-	return text;
-
-
-class ActionUtterGreet(Action):
+class ActionCheckValueNum(Action):
 	def name(self):
-		return 'say_greet'
-
-	def initializeUserInformation (self, userName):
-		userInfo = {}
-		userInfo["user_values"] = []
-		userInfo["actions"] = []
-		userInfo["value_to_actions"] = {}
-		userInfo["current_value"] = None 
-		return userInfo
+		return 'check_value_num'
 
 	def run(self, dispatcher, tracker, domain):
-		response = "Hi! Welcome the Reflection Chatbot app. My name is Idunn. Which value can I help you focus today?"
-		dispatcher.utter_message(response);
+		num_value = 0
+		value_list = []
+		for value in tracker.get_latest_entity_values('value'):
+			num_value += 1
+			value_list.append(value)
+		dispatcher.utter_message(",".join(value_list)) # TODO - delete
 
-		user_info = self.initializeUserInformation("Random User")
-
-		stringToSay = getListString(user_info["user_values"])
-		dispatcher.utter_message(stringToSay);
-
-		return [SlotSet('user_info', user_info)]
-
-
-class ActionReportValue(Action):
-	def name(self):
-		return 'report_value'
-
-	def run(self, dispatcher, tracker, domain):
-		value = tracker.get_slot('value_type')
-
-		user_info = tracker.get_slot('user_info')
-		user_values = user_info['user_values']	
-		user_values.append(value)
-		user_info["user_values"] = user_values
-		user_info["current_value"] = value;
-
-		stringToSay = getListString(user_info["user_values"])
-		dispatcher.utter_message(stringToSay);
-		resonpse = "The value you chose to reflect on is {}.".format(value)
-		dispatcher.utter_message(resonpse)
-		resonpse = "I will now ask you some questions on your actions. Please be patient and answer them all :)"
-		dispatcher.utter_message(resonpse)
-		return [SlotSet('value_type',value), SlotSet('user_info',user_info)]
-
-
-class StructuredQFormBehaviour(FormAction):
-	def name(self):
-		return 'structured_q_form_behaviour'
-
-	@staticmethod
-	def required_slots(tracker: Tracker):
-		return ["behaviour_1", "behaviour_2", "behaviour_3"]
-
-	def slot_mappings(self):
-		return {
-			"behaviour_1" : self.from_text(),
-			"behaviour_2" : self.from_text(),
-			"behaviour_3" : self.from_text()
-		}
-
-	def submit(
-		self,
-		dispatcher,
-		tracker,
-		domain):
-		dispatcher.utter_template("utter_submit_behaviour", tracker)
-		return []
-
-	def validate_behaviour_1(
-		self, 
-		value, 
-		dispatcher,
-		tracker,
-		domain):
-		if tracker.latest_message['intent'].get('name') == 'inform':
-			return {"behaviour_1" : value}
-		elif tracker.latest_message['intent'].get('name') == 'explain':
-			dispatcher.utter_template("utter_explain_behaviour", tracker)
-			return {"behaviour_1" : None}
-		else:
-			dispatcher.utter_message("I can't understand, rephrase or use a longer sentence.")
-			return {"behaviour_1" : None}
-
-	def validate_behaviour_2(
-		self, 
-		value, 
-		dispatcher,
-		tracker,
-		domain):
-		if tracker.latest_message['intent'].get('name') == 'inform':
-			return {"behaviour_2" : value}
-		elif tracker.latest_message['intent'].get('name') == 'explain':
-			dispatcher.utter_template("utter_explain_behaviour", tracker)
-			return {"behaviour_2" : None}
-		else:
-			dispatcher.utter_message("I can't understand, rephrase or use a longer sentence.")
-			return {"behaviour_2" : None}
-
-	def validate_behaviour_3(
-		self, 
-		value, 
-		dispatcher,
-		tracker,
-		domain):
-		if tracker.latest_message['intent'].get('name') == 'inform':
-			return {"behaviour_3" : value}
-		elif tracker.latest_message['intent'].get('name') == 'explain':
-			dispatcher.utter_template("utter_explain_behaviour", tracker)
-			return {"behaviour_3" : None}
-		else:
-			dispatcher.utter_message("I can't understand, rephrase or use a longer sentence.")
-			return {"behaviour_3" : None}
-
-'''
-General questions about the user's value, includes:
-- why important?
-- how your express this value
-- do you have goals
-Based on whether the user has goals surrounding the value, goal/plan oriented form
-'''
-class StructuredQFormValue(FormAction):
-	def name(self):
-		return 'structured_q_form_value'
-
-	@staticmethod
-	def required_slots(tracker: Tracker):
-		return ["value_1", "value_2", "value_goal"]
-
-	def slot_mappings(self):
-		return {
-			"value_1" : self.from_text(),
-			"value_2" : self.from_text(),
-			"value_goal" : [
-							self.from_intent(intent="deny", value="no"),
-							self.from_text(intent="inform"),
-							self.from_text()
-							]
-		}
-
-	def validate_value_1(
-		self, 
-		value, 
-		dispatcher,
-		tracker,
-		domain):
-		if tracker.latest_message['intent'].get('name') == 'inform':
-			return {"value_1" : value}
-		elif tracker.latest_message['intent'].get('name') == 'explain':
-			dispatcher.utter_template("utter_explain_value", tracker)
-			return {"value_1" : None}
-		else:
-			dispatcher.utter_message("I can't understand, rephrase or use a longer sentence.")
-			return {"value_1" : None}
-
-	def validate_value_2(
-		self, 
-		value, 
-		dispatcher,
-		tracker,
-		domain):
-		if tracker.latest_message['intent'].get('name') == 'inform':
-			return {"value_2" : value}
-		elif tracker.latest_message['intent'].get('name') == 'explain':
-			dispatcher.utter_template("utter_explain_value", tracker)
-			return {"value_2" : None}
-		else:
-			dispatcher.utter_message("I can't understand, rephrase or use a longer sentence.")
-			return {"value_2" : None}
-
-	def validate_value_goal(
-		self, 
-		value, 
-		dispatcher,
-		tracker,
-		domain):
-		if tracker.latest_message['intent'].get('name') == 'inform' or \
-			tracker.latest_message['intent'].get('name') == 'deny':
-			return {"value_goal" : value}
-		elif tracker.latest_message['intent'].get('name') == 'explain':
-			dispatcher.utter_template("utter_explain_value", tracker)
-			return {"value_goal" : None}
-		else:
-			dispatcher.utter_message("I can't understand, rephrase or use a longer sentence.")
-			return {"value_goal" : None}
-
-	def submit(
-		self,
-		dispatcher,
-		tracker,
-		domain):
-		dispatcher.utter_template("utter_submit_value", tracker)
-		return []
+		if num_value == 1:
+			slot_num_value = 'one'
+			return [SlotSet('num_value', slot_num_value), SlotSet('value_focus', value_list[0])]
+		elif num_value == 0:
+			dispatcher.utter_message("I didn't quite get that, please select a value important to you from the list above.")
+			slot_num_value = 'zero'
+		else: 
+			dispatcher.utter_message("You selected " + ", ".join(value_list) + ". Which one do you value the most?")
+			slot_num_value = 'more'
 		
+		return [SlotSet('num_value', slot_num_value)]
 
 
-class StructuredQFormValueGoal(FormAction):
+class ActionExplainValue(Action):
 	def name(self):
-		return 'structured_q_form_value_ex'
+		return 'action_explain_value'
 
-	@staticmethod
-	def required_slots(tracker: Tracker):
+	def run(self, dispatcher, tracker, domain):
+		num_value = 0
+		value_list = []
+		for value in tracker.get_latest_entity_values('value'):
+			num_value += 1
+			value_list.append(value)
+		dispatcher.utter_message(",".join(value_list)) # TODO - delete
 
-		if tracker.get_slot("value_goal") == 'no':
-			return ["value_goal_n_1", "value_goal_n_2", "value_goal_n_3", "value_goal_n_4",
-					"value_goal_n_5", "value_goal_n_6", "value_goal_n_7",
-					"value_goal_n_8", "value_goal_n_9"]
-		elif tracker.get_slot("value_goal") is None:
-			return ["value_1", "value_2", "value_goal"]
+		if num_value == 0:
+			dispatcher.utter_message("A value is a person's belief or judgement of what is important in life. " + \
+				"Ask me about a particular value, or choose your value to start!")
 		else:
-			if tracker.get_slot("value_goal_y_1") == 'no':
-				return ["value_goal_y_1", "value_goal_y_1_1",
-						"value_goal_y_2", "value_goal_y_3", "value_goal_y_4"]
-			else:
-				return ["value_goal_y_1", "value_goal_y_2", 
-						"value_goal_y_3", "value_goal_y_4"]
+			dispatcher.utter_message("Meanings of the values are defined from Motivational Interviewing 3rd-Edition by W.R. Miller and S. Rollnick")
+			for value in value_list:
+				if value in value_meaning_dict.keys():
+					dispatcher.utter_message(value_meaning_dict[value])
+			dispatcher.utter_template("utter_select_a_value", tracker)
 
-	def slot_mappings(self):
-		return {
-			"value_goal_y_1" : [
-								self.from_intent(intent="deny", value="no"),
-								self.from_text(intent="inform"),
-								self.from_text()
-							],
-			"value_goal_y_1_1" : self.from_text(),
-			"value_goal_y_2" : self.from_text(),
-			"value_goal_y_3" : self.from_text(),
-			"value_goal_y_4" : [
-								self.from_text(intent="inform"),
-								self.from_intent(intent="deny", value="no"),
-								self.from_text()
-							],
-
-			"value_goal_n_1" : self.from_text(),
-			"value_goal_n_2" : self.from_text(),
-			"value_goal_n_3" : self.from_text(),
-			"value_goal_n_4" : self.from_text(),
-			"value_goal_n_5" : self.from_text(),
-			"value_goal_n_6" : self.from_text(),
-			"value_goal_n_7" : self.from_text(),
-			"value_goal_n_8" : self.from_text(),
-			"value_goal_n_9" : self.from_text()
-		}
-
-	def validate_value_goal_y_1(
-		self, 
-		value, 
-		dispatcher,
-		tracker,
-		domain):
-		if tracker.latest_message['intent'].get('name') == 'inform' or \
-			tracker.latest_message['intent'].get('name') == 'deny':
-			return {"value_goal_y_1" : value}
-		elif tracker.latest_message['intent'].get('name') == 'explain':
-			dispatcher.utter_template("utter_explain_value", tracker)
-			return {"value_goal_y_1" : None}
-		else:
-			dispatcher.utter_message("I can't understand, rephrase or use a longer sentence.")
-			return {"value_goal_y_1" : None}
-
-	def validate_value_goal_y_1_1(
-		self, 
-		value, 
-		dispatcher,
-		tracker,
-		domain):
-		if tracker.latest_message['intent'].get('name') == 'inform':
-			return {"value_goal_y_1_1" : value}
-		elif tracker.latest_message['intent'].get('name') == 'explain':
-			dispatcher.utter_template("utter_explain_value", tracker)
-			return {"value_goal_y_1_1" : None}
-		else:
-			dispatcher.utter_message("I can't understand, rephrase or use a longer sentence.")
-			return {"value_goal_y_1_1" : None}
-
-	def validate_value_goal_y_2(
-		self, 
-		value, 
-		dispatcher,
-		tracker,
-		domain):
-		if tracker.latest_message['intent'].get('name') == 'inform':
-			return {"value_goal_y_2" : value}
-		elif tracker.latest_message['intent'].get('name') == 'explain':
-			dispatcher.utter_template("utter_explain_value", tracker)
-			return {"value_goal_y_2" : None}
-		else:
-			dispatcher.utter_message("I can't understand, rephrase or use a longer sentence.")
-			return {"value_goal_y_2" : None}
-
-	def validate_value_goal_y_3(
-		self, 
-		value, 
-		dispatcher,
-		tracker,
-		domain):
-		if tracker.latest_message['intent'].get('name') == 'inform':
-			return {"value_goal_y_3" : value}
-		elif tracker.latest_message['intent'].get('name') == 'explain':
-			dispatcher.utter_template("utter_explain_value", tracker)
-			return {"value_goal_y_3" : None}
-		else:
-			dispatcher.utter_message("I can't understand, rephrase or use a longer sentence.")
-			return {"value_goal_y_3" : None}
-
-	def validate_value_goal_y_4(
-		self, 
-		value, 
-		dispatcher,
-		tracker,
-		domain):
-		if tracker.latest_message['intent'].get('name') == 'inform' or \
-			tracker.latest_message['intent'].get('name') == 'deny':
-			return {"value_goal_y_4" : value}
-		elif tracker.latest_message['intent'].get('name') == 'explain':
-			dispatcher.utter_template("utter_explain_value", tracker)
-			return {"value_goal_y_4" : None}
-		else:
-			dispatcher.utter_message("I can't understand, rephrase or use a longer sentence.")
-			return {"value_goal_y_4" : None}
-
-	def validate_value_goal_n_1(
-		self, 
-		value, 
-		dispatcher,
-		tracker,
-		domain):
-		if tracker.latest_message['intent'].get('name') == 'inform':
-			return {"value_goal_n_1" : value}
-		elif tracker.latest_message['intent'].get('name') == 'explain':
-			dispatcher.utter_template("utter_explain_value", tracker)
-			return {"value_goal_n_1" : None}
-		else:
-			dispatcher.utter_message("I can't understand, rephrase or use a longer sentence.")
-			return {"value_goal_n_1" : None}
-
-	def validate_value_goal_n_2(
-		self, 
-		value, 
-		dispatcher,
-		tracker,
-		domain):
-		if tracker.latest_message['intent'].get('name') == 'inform':
-			return {"value_goal_n_1" : value}
-		elif tracker.latest_message['intent'].get('name') == 'explain':
-			dispatcher.utter_template("utter_explain_value", tracker)
-			return {"value_goal_n_1" : None}
-		else:
-			dispatcher.utter_message("I can't understand, rephrase or use a longer sentence.")
-			return {"value_goal_n_1" : None}
-
-	def validate_value_goal_n_3(
-		self, 
-		value, 
-		dispatcher,
-		tracker,
-		domain):
-		if tracker.latest_message['intent'].get('name') == 'inform':
-			return {"value_goal_n_3" : value}
-		elif tracker.latest_message['intent'].get('name') == 'explain':
-			dispatcher.utter_template("utter_explain_value", tracker)
-			return {"value_goal_n_3" : None}
-		else:
-			dispatcher.utter_message("I can't understand, rephrase or use a longer sentence.")
-			return {"value_goal_n_3" : None}
-
-	def validate_value_goal_n_4(
-		self, 
-		value, 
-		dispatcher,
-		tracker,
-		domain):
-		if tracker.latest_message['intent'].get('name') == 'inform':
-			return {"value_goal_n_4" : value}
-		elif tracker.latest_message['intent'].get('name') == 'explain':
-			dispatcher.utter_template("utter_explain_value", tracker)
-			return {"value_goal_n_4" : None}
-		else:
-			dispatcher.utter_message("I can't understand, rephrase or use a longer sentence.")
-			return {"value_goal_n_4" : None}
-
-	def validate_value_goal_n_5(
-		self, 
-		value, 
-		dispatcher,
-		tracker,
-		domain):
-		if tracker.latest_message['intent'].get('name') == 'inform':
-			return {"value_goal_n_5" : value}
-		elif tracker.latest_message['intent'].get('name') == 'explain':
-			dispatcher.utter_template("utter_explain_value", tracker)
-			return {"value_goal_n_5" : None}
-		else:
-			dispatcher.utter_message("I can't understand, rephrase or use a longer sentence.")
-			return {"value_goal_n_5" : None}
-
-	def validate_value_goal_n_6(
-		self, 
-		value, 
-		dispatcher,
-		tracker,
-		domain):
-		if tracker.latest_message['intent'].get('name') == 'inform':
-			return {"value_goal_n_6" : value}
-		elif tracker.latest_message['intent'].get('name') == 'explain':
-			dispatcher.utter_template("utter_explain_value", tracker)
-			return {"value_goal_n_6" : None}
-		else:
-			dispatcher.utter_message("I can't understand, rephrase or use a longer sentence.")
-			return {"value_goal_n_6" : None}
-
-	def validate_value_goal_n_7(
-		self, 
-		value, 
-		dispatcher,
-		tracker,
-		domain):
-		if tracker.latest_message['intent'].get('name') == 'inform':
-			return {"value_goal_n_7" : value}
-		elif tracker.latest_message['intent'].get('name') == 'explain':
-			dispatcher.utter_template("utter_explain_value", tracker)
-			return {"value_goal_n_7" : None}
-		else:
-			dispatcher.utter_message("I can't understand, rephrase or use a longer sentence.")
-			return {"value_goal_n_7" : None}
-
-	def validate_value_goal_n_8(
-		self, 
-		value, 
-		dispatcher,
-		tracker,
-		domain):
-		if tracker.latest_message['intent'].get('name') == 'inform':
-			return {"value_goal_n_8" : value}
-		elif tracker.latest_message['intent'].get('name') == 'explain':
-			dispatcher.utter_template("utter_explain_value", tracker)
-			return {"value_goal_n_8" : None}
-		else:
-			dispatcher.utter_message("I can't understand, rephrase or use a longer sentence.")
-			return {"value_goal_n_8" : None}
-
-	def validate_value_goal_n_9(
-		self, 
-		value, 
-		dispatcher,
-		tracker,
-		domain):
-		if tracker.latest_message['intent'].get('name') == 'inform':
-			return {"value_goal_n_9" : value}
-		elif tracker.latest_message['intent'].get('name') == 'explain':
-			dispatcher.utter_template("utter_explain_value", tracker)
-			return {"value_goal_n_9" : None}
-		else:
-			dispatcher.utter_message("I can't understand, rephrase or use a longer sentence.")
-			return {"value_goal_n_9" : None}
-
-	def submit(
-		self,
-		dispatcher,
-		tracker,
-		domain):
-		dispatcher.utter_template("utter_submit_value", tracker)
 		return []
 
+class ActionRepeat(Action):
+	def name(self):
+		return 'action_repeat'
 
+	def run(self, dispatcher, tracker, domain):
+		second_last_bot_msg = None
+		first_bot_msg_found = False
+		for item in reversed(tracker.events):
+			if item.get('event') == 'bot':
+				if not first_bot_msg_found:
+					first_bot_msg_found = True
+					print("first:")
+					print(item.get('text'))
+				else:
+					print("second:")
+					second_last_bot_msg = item.get('text')
+					break
+		if second_last_bot_msg is not None:
+			dispatcher.utter_message(second_last_bot_msg)
+		return []
+
+class ActionCheckBehaviourNum(Action):
+	def name(self):
+		return 'check_behaviour_num'
+
+	def run(self, dispatcher, tracker, domain):
+		if tracker.get_slot('value_focus') is None:
+			dispatcher.utter_message("Looks like you have not chosen a value for reflection.")
+			dispatcher.utter_template("utter_select_a_value", tracker)
+			return []
+
+		num_action = 0
+		action_list = []
+		for action in tracker.get_latest_entity_values('activity'):
+			num_action += 1
+			action_list.append(action)
+		dispatcher.utter_message(",".join(action_list)) # TODO - delete
+
+		if num_action == 3:
+			return [SlotSet('num_act', 'three'), SlotSet('act_1', action_list[0]), SlotSet('act_2', action_list[1]), SlotSet('act_3', action_list[2])]
+		elif num_action > 3:
+			dispatcher.utter_message("I've detected more than three activities from your response" + \
+				", ".join(action_list) + ". Please enter only the three activities you spend most of your time doing.")
+			return [SlotSet('num_act', 'more')]
+		elif num_action == 0:
+			dispatcher.utter_message("I did not detect any activities from your response.")
+			return [SlotSet('num_act', 'zero')]
+		else:
+			dispatcher.utter_message("I've only detected {} activity(ies) from your response".format(str(num_action)))
+			return [SlotSet('num_act', 'less')]
 

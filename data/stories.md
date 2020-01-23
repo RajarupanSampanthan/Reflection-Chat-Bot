@@ -1,368 +1,324 @@
-## interactive_story_1
+## happy path
 * greet
-    - say_greet
-    - slot{"user_info": {"actions": [], "current_value": null, "user_values": [], "value_to_actions": {}}}
-* value_focus{"value_type": "wealth"}
-    - slot{"value_type": "wealth"}
-    - report_value
-    - slot{"value_type": "wealth"}
-    - slot{"user_info": {"actions": [], "current_value": "wealth", "user_values": ["wealth"], "value_to_actions": {}}}
-    - structured_q_form_behaviour
-    - form{"name": "structured_q_form_behaviour"}
-    - slot{"requested_slot": "behaviour_1"}
-* goodbye
-    - utter_ask_continue
+  - utter_greet
+* mood_great
+  - utter_happy
+
+## sad path 1
+* greet
+  - utter_greet
+* mood_unhappy
+  - utter_cheer_up
+  - utter_did_that_help
+* affirm
+  - utter_happy
+
+## sad path 2
+* greet
+  - utter_greet
+* mood_unhappy
+  - utter_cheer_up
+  - utter_did_that_help
 * deny
-    - action_deactivate_form
-    - form{"name": null}
-    - slot{"requested_slot": null}
+  - utter_goodbye
+
+## bot challenge
+* bot_challenge
+  - utter_iamabot
+
+## interactive_story_0
+* choose_value{"value": "family"}
+  - check_value_num
 
 ## interactive_story_1
-* greet
-    - say_greet
-    - slot{"user_info": {"actions": [], "current_value": null, "user_values": [], "value_to_actions": {}}}
-* value_focus{"value_type": "wealth"}
-    - slot{"value_type": "wealth"}
-    - report_value
-    - slot{"value_type": "wealth"}
-    - slot{"user_info": {"actions": [], "current_value": "wealth", "user_values": ["wealth"], "value_to_actions": {}}}
-    - structured_q_form_behaviour
-    - form{"name": "structured_q_form_behaviour"}
-    - slot{"requested_slot": "behaviour_1"}
-* form: deny
-    - form: structured_q_form_behaviour
-    - slot{"behaviour_1": null}
-    - slot{"requested_slot": "behaviour_1"}
-* form: inform
-    - form: structured_q_form_behaviour
-    - slot{"behaviour_1": "I study"}
-    - slot{"requested_slot": "behaviour_2"}
-* goodbye
-    - utter_ask_continue
+* choose_value{"value": "friendship"}
+    - check_value_num
+    - slot{"num_value": "one"}
+    - utter_confirm_value
+
+## interactive_story_2
+* choose_value{"value": "friendship"}
+    - check_value_num
+    - slot{"num_value": "more"}
+
+## happy_path 
+* choose_value{"value": "friendship"}
+    - check_value_num
+    - slot{"num_value": "one"}
+    - slot{"value_focus": "friendship"}
+    - utter_confirm_value
+* affirm
+    - utter_your_top_activities
+
+
+## sad_path_deny_decision
+* choose_value{"value": "friendship"}
+    - check_value_num
+    - slot{"num_value": "one"}
+    - slot{"value_focus": "friendship"}
+    - utter_confirm_value
 * deny
-    - action_deactivate_form
-    - form{"name": null}
-    - slot{"requested_slot": null}
+    - utter_select_a_value
+* choose_value{"value": "health"}
+    - check_value_num
+    - slot{"num_value": "one"}
+    - slot{"value_focus": "health"}
+    - utter_confirm_value
+* affirm
+    - utter_your_top_activities
 
-## interactive_story_1
-* greet
-    - say_greet
-    - slot{"user_info": {"actions": [], "current_value": null, "user_values": [], "value_to_actions": {}}}
-* value_focus{"value_type": "wealth"}
-    - slot{"value_type": "wealth"}
-    - report_value
-    - slot{"value_type": "wealth"}
-    - slot{"user_info": {"actions": [], "current_value": "wealth", "user_values": ["wealth"], "value_to_actions": {}}}
-    - structured_q_form_behaviour
-    - form{"name": "structured_q_form_behaviour"}
-    - slot{"requested_slot": "behaviour_1"}
-* form: inform
-    - form: structured_q_form_behaviour
-    - slot{"behaviour_1": "I sleep, eat, study, and play video games"}
-    - slot{"requested_slot": "behaviour_2"}
-* form: inform
-    - form: structured_q_form_behaviour
-    - slot{"behaviour_2": "I have not done anything meaningful"}
-    - slot{"requested_slot": "behaviour_3"}
-* form: inform
-    - form: structured_q_form_behaviour
-    - slot{"behaviour_3": "I would learn a new skill such as music composing"}
-    - form{"name": null}
-    - slot{"requested_slot": null}
-> value_form
 
-## interactive_story_1
-* greet
-    - say_greet
-    - slot{"user_info": {"actions": [], "current_value": null, "user_values": [], "value_to_actions": {}}}
-* value_focus{"value_type": "health"}
-    - slot{"value_type": "health"}
-    - report_value
-    - slot{"value_type": "health"}
-    - slot{"user_info": {"actions": [], "current_value": "health", "user_values": ["health"], "value_to_actions": {}}}
-    - structured_q_form_behaviour
-    - form{"name": "structured_q_form_behaviour"}
-    - slot{"requested_slot": "behaviour_1"}
-* form: inform
-    - form: structured_q_form_behaviour
-    - slot{"behaviour_1": "I eat, sleep and watch tv"}
-    - slot{"requested_slot": "behaviour_2"}
-* form: inform
-    - form: structured_q_form_behaviour
-    - slot{"behaviour_2": "I have not done anything meaningful"}
-    - slot{"requested_slot": "behaviour_3"}
-* form: inform
-    - form: structured_q_form_behaviour
-    - slot{"behaviour_3": "I would travel to Asia"}
-    - form{"name": null}
-    - slot{"requested_slot": null}
-> value_form
-    - structured_q_form_value
-    - form{"name": "structured_q_form_value"}
-    - slot{"requested_slot": "value_1"}
-* form: inform
-    - form: structured_q_form_value
-    - slot{"value_1": "because I want to enjoy the world"}
-    - slot{"requested_slot": "value_2"}
-* form: inform
-    - form: structured_q_form_value
-    - slot{"value_2": "by going to the gym"}
-    - slot{"requested_slot": "value_goal"}
-* form: deny
-    - form: structured_q_form_value
-    - slot{"value_goal": "no"}
-    - form{"name": null}
-    - slot{"requested_slot": null}
-> value_form_contd
+## sad_path_more_than_one_values
+* choose_value{"value": "family"}
+    - check_value_num
+    - slot{"num_value": "more"}
+* choose_value{"value": "family"}
+    - check_value_num
+    - slot{"num_value": "one"}
+    - slot{"value_focus": "family"}
+    - utter_confirm_value
+* affirm
+    - utter_your_top_activities
 
-## interactive_story_1
-* greet
-    - say_greet
-    - slot{"user_info": {"actions": [], "current_value": null, "user_values": [], "value_to_actions": {}}}
-* value_focus{"value_type": "wealth"}
-    - slot{"value_type": "wealth"}
-    - report_value
-    - slot{"value_type": "wealth"}
-    - slot{"user_info": {"actions": [], "current_value": "wealth", "user_values": ["wealth"], "value_to_actions": {}}}
-    - structured_q_form_behaviour
-    - form{"name": "structured_q_form_behaviour"}
-    - slot{"requested_slot": "behaviour_1"}
-* form: inform
-    - form: structured_q_form_behaviour
-    - slot{"behaviour_1": "I eat, sleep, nothing else"}
-    - slot{"requested_slot": "behaviour_2"}
-* form: greet
-    - form: structured_q_form_behaviour
-    - slot{"behaviour_2": null}
-    - slot{"requested_slot": "behaviour_2"}
-* form: inform
-    - form: structured_q_form_behaviour
-    - slot{"behaviour_2": "I have done nothing"}
-    - slot{"requested_slot": "behaviour_3"}
-* form: value_focus
-    - form: structured_q_form_behaviour
-    - slot{"behaviour_3": null}
-    - slot{"requested_slot": "behaviour_3"}
-* form: inform
-    - form: structured_q_form_behaviour
-    - slot{"behaviour_3": "I would sleep"}
-    - form{"name": null}
-    - slot{"requested_slot": null}
-    - structured_q_form_value
-    - form{"name": "structured_q_form_value"}
-    - slot{"requested_slot": "value_1"}
-* form: inform
-    - form: structured_q_form_value
-    - slot{"value_1": "stop"}
-    - slot{"requested_slot": "value_2"}
-* goodbye
-    - utter_ask_continue
+
+## sad_path_zero_values
+* choose_value
+    - check_value_num
+    - slot{"num_value": "zero"}
+* choose_value{"value": "family"}
+    - check_value_num
+    - slot{"num_value": "one"}
+    - slot{"value_focus": "family"}
+    - utter_confirm_value
+* affirm
+    - utter_your_top_activities
+
+
+## sad_path_ask_chatbot_purpose_boring
+* explain_chatbot_purpose
+    - utter_state_chatbot_purpose
+* sounds_boring
+    - utter_give_it_a_try
+* choose_value{"value": "wealth"}
+    - check_value_num
+    - slot{"num_value": "one"}
+    - slot{"value_focus": "wealth"}
+    - utter_confirm_value
+* affirm
+    - utter_your_top_activities
+
+
+## sad_path_ask_chatbot_purpose_interesting
+* explain_chatbot_purpose
+    - utter_state_chatbot_purpose
+* sounds_cool
+    - utter_agree_interesting
+* choose_value{"value": "health"}
+    - check_value_num
+    - slot{"num_value": "one"}
+    - slot{"value_focus": "health"}
+    - utter_confirm_value
+* affirm
+    - utter_your_top_activities
+
+
+## sad_path_general
+* explain_chatbot_purpose
+    - utter_state_chatbot_purpose
+* choose_value{"value": "friendship"}
+    - check_value_num
+    - slot{"num_value": "more"}
+* choose_value{"value": "family"}
+    - check_value_num
+    - slot{"num_value": "one"}
+    - slot{"value_focus": "family"}
+    - utter_confirm_value
 * deny
-    - action_deactivate_form
-    - form{"name": null}
-    - slot{"requested_slot": null}
+    - utter_select_a_value
+* choose_value{"value": "friendship"}
+    - check_value_num
+    - slot{"num_value": "one"}
+    - slot{"value_focus": "friendship"}
+    - utter_confirm_value
+* affirm
+    - utter_your_top_activities
+
+
+## sad_path_explain_values
+* explain_value
+    - action_explain_value
+* explain_value{"value": "achievement"}
+    - action_explain_value
+* explain_value{"value": "family"}
+    - action_explain_value
+* choose_value{"value": "friendship"}
+    - check_value_num
+    - slot{"num_value": "one"}
+    - slot{"value_focus": "friendship"}
+    - utter_confirm_value
+* affirm
+    - utter_your_top_activities
+
+
+## stop_convo_path_affirm
+* stop_convo OR goodbye
+    - utter_ask_stop
+* affirm
+    - utter_goodbye
+    - action_restart
+
+## stop_convo_path_deny
+* stop_convo OR goodbye
+    - utter_ask_stop
+* deny
+    - action_repeat
+
+## interactive_story_1
+* choose_value{"value": "wealth"}
+    - check_value_num
+    - slot{"num_value": "more"}
+* choose_value{"value": "health"}
+    - check_value_num
+    - slot{"num_value": "one"}
+    - slot{"value_focus": "health"}
+    - utter_confirm_value
+* affirm
+    - utter_your_top_activities
+
 
 ## interactive_story_1
 * greet
-    - say_greet
-    - slot{"user_info": {"actions": [], "current_value": null, "user_values": [], "value_to_actions": {}}}
-* value_focus{"value_type": "wealth"}
-    - slot{"value_type": "wealth"}
-    - report_value
-    - slot{"value_type": "wealth"}
-    - slot{"user_info": {"actions": [], "current_value": "wealth", "user_values": ["wealth"], "value_to_actions": {}}}
-    - structured_q_form_behaviour
-    - form{"name": "structured_q_form_behaviour"}
-    - slot{"requested_slot": "behaviour_1"}
-* form: inform
-    - form: structured_q_form_behaviour
-    - slot{"behaviour_1": "I eat, sleep"}
-    - slot{"requested_slot": "behaviour_2"}
-* form: inform
-    - form: structured_q_form_behaviour
-    - slot{"behaviour_2": "I have done nothing meaningful"}
-    - slot{"requested_slot": "behaviour_3"}
-* form: inform
-    - form: structured_q_form_behaviour
-    - slot{"behaviour_3": "I would sleep"}
-    - form{"name": null}
-    - slot{"requested_slot": null}
-    - structured_q_form_value
-    - form{"name": "structured_q_form_value"}
-    - slot{"requested_slot": "value_1"}
-* form: inform
-    - form: structured_q_form_value
-    - slot{"value_1": "because I wanna be rich"}
-    - slot{"requested_slot": "value_2"}
-* form: deny
-    - form: structured_q_form_value
-    - slot{"value_2": null}
-    - slot{"requested_slot": "value_2"}
-* form: greet
-    - form: structured_q_form_value
-    - slot{"value_2": null}
-    - slot{"requested_slot": "value_2"}
-* form: inform
-    - form: structured_q_form_value
-    - slot{"value_2": "by stealing from others"}
-    - slot{"requested_slot": "value_goal"}
-* form: deny
-    - form: structured_q_form_value
-    - slot{"value_goal": "no"}
-    - form{"name": null}
-    - slot{"requested_slot": null}
-> value_form_contd
+    - utter_greet
+* stop_convo
+    - utter_ask_stop
+* deny
+    - action_repeat
+* choose_value{"value": "family"}
+    - check_value_num
+    - slot{"num_value": "one"}
+    - slot{"value_focus": "family"}
+    - utter_confirm_value
+* stop_convo
+    - utter_ask_stop
+* deny
+    - action_repeat
+* explain_value{"value": "health"}
+    - action_explain_value
+* stop_convo
+    - utter_ask_stop
+* deny
+    - action_repeat
+* choose_value{"value": "wealth"}
+    - check_value_num
+    - slot{"num_value": "one"}
+    - slot{"value_focus": "wealth"}
+    - utter_confirm_value
+* affirm
+    - utter_your_top_activities
 
 ## interactive_story_1
-* greet
-    - say_greet
-    - slot{"user_info": {"actions": [], "current_value": null, "user_values": [], "value_to_actions": {}}}
-* value_focus{"value_type": "friendship"}
-    - slot{"value_type": "friendship"}
-    - report_value
-    - slot{"value_type": "friendship"}
-    - slot{"user_info": {"actions": [], "current_value": "friendship", "user_values": ["friendship"], "value_to_actions": {}}}
-    - structured_q_form_behaviour
-    - form{"name": "structured_q_form_behaviour"}
-    - slot{"requested_slot": "behaviour_1"}
-* form: inform
-    - form: structured_q_form_behaviour
-    - slot{"behaviour_1": "I work and hang out with friends"}
-    - slot{"requested_slot": "behaviour_2"}
-* form: inform
-    - form: structured_q_form_behaviour
-    - slot{"behaviour_2": "I imporved my relationship with my friends"}
-    - slot{"requested_slot": "behaviour_3"}
-* form: inform
-    - form: structured_q_form_behaviour
-    - slot{"behaviour_3": "I would travel to Europe"}
-    - form{"name": null}
-    - slot{"requested_slot": null}
-    - structured_q_form_value
-    - form{"name": "structured_q_form_value"}
-    - slot{"requested_slot": "value_1"}
-* form: inform
-    - form: structured_q_form_value
-    - slot{"value_1": "because friends helped me, and I want to have good friends"}
-    - slot{"requested_slot": "value_2"}
-* form: inform
-    - form: structured_q_form_value
-    - slot{"value_2": "by hanging out with them"}
-    - slot{"requested_slot": "value_goal"}
-* form: deny
-    - form: structured_q_form_value
-    - slot{"value_goal": "no"}
-    - form{"name": null}
-    - slot{"requested_slot": null}
-> value_form_contd
-    - structured_q_form_value_ex
-    - form{"name": "structured_q_form_value_ex"}
-    - slot{"requested_slot": "value_goal_n_1"}
-* form: inform
-    - form: structured_q_form_value_ex
-    - slot{"value_goal_n_1": "My friends talked me out of suicide"}
-    - slot{"requested_slot": "value_goal_n_2"}
-* form: inform
-    - form: structured_q_form_value_ex
-    - slot{"value_goal_n_2": "about a year ago, only happened once"}
-    - slot{"value_goal_n_1": "about a year ago, only happened once"}
-    - slot{"requested_slot": "value_goal_n_3"}
-* form: inform
-    - form: structured_q_form_value_ex
-    - slot{"value_goal_n_3": "that made me feel cared"}
-    - slot{"requested_slot": "value_goal_n_4"}
-* form: inform
-    - form: structured_q_form_value_ex
-    - slot{"value_goal_n_4": "pretty well"}
-    - slot{"requested_slot": "value_goal_n_5"}
-* form: inform
-    - form: structured_q_form_value_ex
-    - slot{"value_goal_n_5": "I would not"}
-    - slot{"requested_slot": "value_goal_n_6"}
-* form: inform
-    - form: structured_q_form_value_ex
-    - slot{"value_goal_n_6": "because I don't feel the need to change my actions"}
-    - slot{"requested_slot": "value_goal_n_7"}
-* form: inform
-    - form: structured_q_form_value_ex
-    - slot{"value_goal_n_7": "When I needed to prepare for my exam and didn't go to a friend's party"}
-    - slot{"requested_slot": "value_goal_n_8"}
-* form: inform
-    - form: structured_q_form_value_ex
-    - slot{"value_goal_n_8": "my study"}
-    - slot{"requested_slot": "value_goal_n_9"}
-* form: inform
-    - form: structured_q_form_value_ex
-    - slot{"value_goal_n_9": "I would not change anything, my exam was more important at the time"}
-    - form{"name": null}
-    - slot{"requested_slot": null}
+* choose_value{"value": "family"}
+    - check_value_num
+    - slot{"num_value": "one"}
+    - slot{"value_focus": "family"}
+    - utter_confirm_value
+* stop_convo
+    - utter_ask_stop
+* affirm
+    - utter_goodbye
+    - action_restart
 
 ## interactive_story_1
-* greet
-    - say_greet
-    - slot{"user_info": {"actions": [], "current_value": null, "user_values": [], "value_to_actions": {}}}
-* value_focus{"value_type": "wealth"}
-    - slot{"value_type": "wealth"}
-    - report_value
-    - slot{"value_type": "wealth"}
-    - slot{"user_info": {"actions": [], "current_value": "wealth", "user_values": ["wealth"], "value_to_actions": {}}}
-    - structured_q_form_behaviour
-    - form{"name": "structured_q_form_behaviour"}
-    - slot{"requested_slot": "behaviour_1"}
-* form: inform
-    - form: structured_q_form_behaviour
-    - slot{"behaviour_1": "I eat sleep and play video games"}
-    - slot{"requested_slot": "behaviour_2"}
-* form: inform
-    - form: structured_q_form_behaviour
-    - slot{"behaviour_2": "developing my career"}
-    - slot{"requested_slot": "behaviour_3"}
-* form: inform
-    - form: structured_q_form_behaviour
-    - slot{"behaviour_3": "I would travel"}
-    - form{"name": null}
-    - slot{"requested_slot": null}
-    - structured_q_form_value
-    - form{"name": "structured_q_form_value"}
-    - slot{"requested_slot": "value_1"}
-* form: inform
-    - form: structured_q_form_value
-    - slot{"value_1": "because I wanna be rich"}
-    - slot{"requested_slot": "value_2"}
-* form: inform
-    - form: structured_q_form_value
-    - slot{"value_2": "by saving up money"}
-    - slot{"requested_slot": "value_goal"}
-* form: affirm
-    - form: structured_q_form_value
-    - slot{"value_goal": null}
-    - slot{"requested_slot": "value_goal"}
-* form: inform
-    - form: structured_q_form_value
-    - slot{"value_goal": "yes, I want to be the richest person on the planet"}
-    - form{"name": null}
-    - slot{"requested_slot": null}
-    - structured_q_form_value_ex
-    - form{"name": "structured_q_form_value_ex"}
-    - slot{"requested_slot": "value_goal_y_1"}
-* form: deny
-    - form: structured_q_form_value_ex
-    - slot{"value_goal_y_1": "no"}
-    - slot{"requested_slot": "value_goal_y_1_1"}
-* form: inform
-    - form: structured_q_form_value_ex
-    - slot{"value_goal_y_1_1": "my laziness"}
-    - slot{"requested_slot": "value_goal_y_2"}
-* form: inform
-    - form: structured_q_form_value_ex
-    - slot{"value_goal_y_2": "also my laziness"}
-    - slot{"requested_slot": "value_goal_y_3"}
-* form: inform
-    - form: structured_q_form_value_ex
-    - slot{"value_goal_y_3": "developing my career"}
-    - slot{"requested_slot": "value_goal_y_4"}
-* form: inform
-    - form: structured_q_form_value_ex
-    - slot{"value_goal_y_4": "mostly just me"}
-    - form{"name": null}
-    - slot{"requested_slot": null}
+* choose_value{"value": "health"}
+    - check_value_num
+    - slot{"num_value": "one"}
+    - slot{"value_focus": "health"}
+    - utter_confirm_value
+* affirm
+    - utter_your_top_activities
+* behaviour_describe{"activity": "exercising"}
+    - check_behaviour_num
+    - slot{"num_act": "three"}
+    - slot{"act_1": "singing"}
+    - slot{"act_2": "painting"}
+    - slot{"act_3": "exercising"}
+    - utter_confirm_activities
+* affirm
+    - utter_next_section
+
+## interactive_story_1
+* choose_value{"value": "health"}
+    - check_value_num
+    - slot{"num_value": "one"}
+    - slot{"value_focus": "health"}
+    - utter_confirm_value
+* affirm
+    - utter_your_top_activities
+* behaviour_describe{"activity": "exercising"}
+    - check_behaviour_num
+    - slot{"num_act": "three"}
+    - slot{"act_1": "singing"}
+    - slot{"act_2": "painting"}
+    - slot{"act_3": "exercising"}
+    - utter_confirm_activities
+* deny
+    - utter_your_top_activities_again
+
+
+
+## interactive_story_1
+* choose_value{"value": "wealth"}
+    - check_value_num
+    - slot{"num_value": "one"}
+    - slot{"value_focus": "wealth"}
+    - utter_confirm_value
+* affirm
+    - utter_your_top_activities
+* behaviour_describe{"activity": "playing video games"}
+    - check_behaviour_num
+    - slot{"num_act": "three"}
+    - slot{"act_1": "drinking alcohol"}
+    - slot{"act_2": "sleeping"}
+    - slot{"act_3": "playing video games"}
+    - utter_confirm_activities
+* deny
+    - utter_your_top_activities_again
+* behaviour_describe{"activity": "singing"}
+    - check_behaviour_num
+    - slot{"num_act": "three"}
+    - slot{"act_1": "exercising"}
+    - slot{"act_2": "painting"}
+    - slot{"act_3": "singing"}
+    - utter_confirm_activities
+* affirm
+    - utter_next_section
+
+## interactive_story_1
+* choose_value{"value": "fun"}
+    - check_value_num
+    - slot{"num_value": "one"}
+    - slot{"value_focus": "fun"}
+    - utter_confirm_value
+* affirm
+    - utter_your_top_activities
+* behaviour_describe
+    - check_behaviour_num
+    - slot{"num_act": "zero"}
+    - utter_your_top_activities_again
+* behaviour_describe{"activity": "fixing"}
+    - check_behaviour_num
+    - slot{"num_act": "less"}
+    - utter_your_top_activities_again
+* behaviour_describe{"activity": "studying"}
+    - check_behaviour_num
+    - slot{"num_act": "more"}
+    - utter_your_top_activities_again
+* behaviour_describe{"activity": "drinking"}
+    - check_behaviour_num
+    - slot{"num_act": "three"}
+    - slot{"act_1": "working"}
+    - slot{"act_2": "sleeping"}
+    - slot{"act_3": "drinking"}
+    - utter_confirm_activities
+* affirm
+    - utter_next_section

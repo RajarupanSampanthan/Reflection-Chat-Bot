@@ -1,159 +1,129 @@
-intents:
-- value_focus
-- greet
-- inform:
-    use_entities: []
-- stop
-- affirm
-- deny
-- ask_for_values
-- goodbye
-- explain
-entities:
-- value_type
-slots:
-  behaviour_1:
-    type: text
-  behaviour_2:
-    type: text
-  behaviour_3:
-    type: text
-  requested_slot:
-    type: unfeaturized
-  user_info:
-    type: list
-  value_1:
-    type: text
-  value_2:
-    type: text
-  value_goal:
-    type: text
-  value_goal_n_1:
-    type: text
-  value_goal_n_2:
-    type: text
-  value_goal_n_3:
-    type: text
-  value_goal_n_4:
-    type: text
-  value_goal_n_5:
-    type: text
-  value_goal_n_6:
-    type: text
-  value_goal_n_7:
-    type: text
-  value_goal_n_8:
-    type: text
-  value_goal_n_9:
-    type: text
-  value_goal_y_1:
-    type: text
-  value_goal_y_1_1:
-    type: text
-  value_goal_y_2:
-    type: text
-  value_goal_y_3:
-    type: text
-  value_goal_y_4:
-    type: text
-  value_type:
-    type: text
-templates:
-  utter_ask_continue_explore_values:
-  - text: Do you still want to explore more values?
-  utter_ask_behaviour_1:
-  - text: For a given week, what do you spend time doing? If possible please assign
-      a percentage to each activity.
-  utter_ask_behaviour_2:
-  - text: Now looking more big picture, in the past year, what have you spent your
-      time doing?
-  utter_ask_behaviour_3:
-  - text: Say you were given a year to do whatever you wanted, what would you do?
-  utter_submit_behaviour:
-  - text: Thank you this has given me a better sense of who you are. I'd now like
-      to ask you more about some of your values.
-  utter_ask_value_1:
-  - text: Why did you pick this as one of your most important values? How did it become
-      one of your core values?
-  utter_ask_value_2:
-  - text: How would you say you express this value in your life?
-  utter_ask_value_goal:
-  - text: Do you have any goals surrounding this value? (Please answer yes and describe
-      the goal(s), anwser no if none).
-  utter_ask_value_goal_y_1:
-  - text: Are you in the progress of achieving this goal?
-  utter_ask_value_goal_y_1_1:
-  - text: What causes the stagnation? What is the result of it?
-  utter_ask_value_goal_y_2:
-  - text: What is preventing you from reaching this goal?
-  utter_ask_value_goal_y_3:
-  - text: Which particular activities we talked about help you achieve your goal?
-  utter_ask_value_goal_y_4:
-  - text: Are there any that you feel are hindering progress towards your goal?
-  utter_ask_value_goal_n_1:
-  - text: Please describe an event when you feel you embodied this value or the value
-      had a large impact on influencing the event?
-  utter_ask_value_goal_n_2:
-  - text: How long ago was this? Do events such as this happen often?
-  utter_ask_value_goal_n_3:
-  - text: How did that make you feel?
-  utter_ask_value_goal_n_4:
-  - text: How well do you feel your actions and how you spend your time reflect this
-      value?
-  utter_ask_value_goal_n_5:
-  - text: How would you like to be spending your time differently to better reflect
-      this value?
-  utter_ask_value_goal_n_6:
-  - text: Why isn't this the case?
-  utter_ask_value_goal_n_7:
-  - text: Were there any events that you felt negatively because you didn't prioritize
-      this value?
-  utter_ask_value_goal_n_8:
-  - text: What prevented you from prioritizing this value?
-  utter_ask_value_goal_n_9:
-  - text: How would you have done to change the outcome of the event?
-  utter_submit_value:
-  - text: value quesions done!
-  utter_didnt_get_value:
-  - text: I didn't get the value you want to focus on, or the value you said isn't
-      supported yet. The current values we can help you focus on are Family, Friendship,
-      Health, Wealth and World Peace.
-  utter_goodbye:
-  - text: Thanks for using Reflection Chatbot. I hope to see you soon!
-  utter_greet:
-  - text: Hi! Welcome the Reflection Chatbot app. My name is Idunn. Which value can
-      I help you focus today?
-  utter_value_list:
-  - text: The available values now are Family, Friendship, Health, Wealth and World
-      Peace.
-  utter_explain_behaviour:
-  - text: The reason we are asking you about your behaviours is because it helps 
-      you to later think about whether these actions reflect well with the value you want to focus on.
-
-  utter_explain_value:
-  - text: The reason we are asking you about how you feel about the value you have chosen
-      is to help you to reflect on it. These questions should help you think about whether the things 
-      you do, your behaviours match the essence of the value
-
-  utter_ask_continue:
-  - text: Do you want to continue?
-
-  utter_doesnot_work:
-  - text: try again
+%YAML 1.1
+---
 actions:
-- report_value
-- say_greet
-- utter_ask_continue_explore_values
-- utter_ask_what_value_next
-- utter_didnt_get_value
+- action_explain_value
+- action_repeat
+- check_behaviour_num
+- check_value_num
+- utter_agree_interesting
+- utter_ask_stop
+- utter_cheer_up
+- utter_confirm_activities
+- utter_confirm_value
+- utter_did_that_help
+- utter_give_it_a_try
 - utter_goodbye
-- utter_value_list
 - utter_greet
-- utter_explain_behaviour
-- utter_explain_value
-- utter_doesnot_work
-- utter_ask_continue
-forms:
-- structured_q_form_behaviour
-- structured_q_form_value
-- structured_q_form_value_ex
+- utter_happy
+- utter_iamabot
+- utter_next_section
+- utter_select_a_value
+- utter_state_chatbot_purpose
+- utter_your_top_activities
+- utter_your_top_activities_again
+entities:
+- activity
+- value
+intents:
+- behaviour_describe
+- affirm
+- choose_value
+- deny
+- stop_convo
+- greet
+- explain_value
+- explain_chatbot_purpose
+- sounds_cool:
+    use_entities: []
+- goodbye
+- mood_great
+- mood_unhappy
+- bot_challenge
+- sounds_boring:
+    use_entities: []
+slots:
+  act_1:
+    type: text
+  act_2:
+    type: text
+  act_3:
+    type: text
+  num_act:
+    type: categorical
+    values:
+    - three
+    - more
+    - less
+    - zero
+  num_value:
+    type: categorical
+    values:
+    - zero
+    - one
+    - more
+  value_focus:
+    type: categorical
+    values:
+    - achievement
+    - family
+    - fun
+    - health
+    - mindfulness
+    - independence
+    - purpose
+    - self-esteem
+    - wealth
+    - friendship
+    - morality
+    - romance
+    - responsibility
+    - knowledge
+    - acceptance
+templates:
+  utter_agree_interesting:
+  - text: Interesting, right? Why don't you try it now! Choose a value important to
+      you.
+  utter_ask_stop:
+  - text: Are you sure you want to stop session?
+  - text: Are you sure you want to stop the conversation?
+  utter_cheer_up:
+  - image: https://i.imgur.com/nGF1K8f.jpg
+    text: 'Here is something to cheer you up:'
+  utter_confirm_activities:
+  - text: You spend most of your time {act_1}, {act_2}, and {act_3}, is this correct?
+  utter_confirm_value:
+  - text: You would like to focus on {value_focus}, correct?
+  - text: You value {value_focus} the most, correct?
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_give_it_a_try:
+  - text: Sorry that didn't interest you :(. Why don't you give it a try, maybe you
+      will find it helpful! Choose a value important to you to start.
+  utter_goodbye:
+  - text: Bye
+  utter_greet:
+  - text: Hey! How are you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_next_section:
+  - text: Next I will ask you your thoughts on the activities you have chosen with
+      relation to your most important value - {value_focus}.
+  utter_select_a_value:
+  - text: Please select the value most important to you.
+  - text: Which of the value do you value the most?
+  utter_state_chatbot_purpose:
+  - text: My purpose is to help you reflect on whether your actions and one of your
+      important values are aligned. Try it out! Select a value important to you from
+      the above list.
+  utter_your_top_activities:
+  - text: I would like to know how you spend your time - this will help you to reflect
+      later on. What are the top three activities you spent most of your time doing
+      in the past week? Provide activities you would do in your 'free time'; 'sleeping',
+      'eating', 'working' are essential to your life thus I do not encourage you to
+      write them, unless you do do these activities in your free time.
+  utter_your_top_activities_again:
+  - text: What are the top three activities you spent most of your time doing in the
+      past week? (Hint - use more generic activities such as 'exercising' as suppose
+      to 'dragon boating').
