@@ -8,9 +8,10 @@ This chatbot is using the framework rasa. [Rasa home page](https://rasa.com/). T
 
 To run the django server (while in .../frontend/ReflectChatbot) This lets you run the rest calls:
 	python manage.py runserver
+	NOT NEEDED ANYMORE
 
-From the root, this starts the react server. You can view the site by typing in http://localhost:8000/ into your browser:
-	npm run dev
+From the reflection-chatbot-ui folder, this starts the react server. You can view the site by typing in http://localhost:3000/ into your browser:
+	npm start
 
 To run rasa chatbot:
 	In one terminal:

@@ -4,3 +4,7 @@ story_graph.dot
 .DS_STORE
 *.db
 *bak.*
+/reflection-chatbot-ui/node_modules
+*.cache
+reflection-chatbot-ui/build/*
+reflection-chatbot-ui/build/precache-manifest.c1d4e201ce304657cdb8fc76d46748f0.js
