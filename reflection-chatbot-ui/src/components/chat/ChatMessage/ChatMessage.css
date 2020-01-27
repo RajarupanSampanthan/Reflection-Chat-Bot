@@ -1,5 +1,5 @@
 .display-linebreak {
-    white-space: pre;
+    white-space: pre-wrap;
 }
 
 .msgContainer {
