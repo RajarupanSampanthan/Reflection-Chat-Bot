@@ -27,6 +27,22 @@ class ChatInput extends Component {
         this.setState({ message: '' });
     };
 
+    //reflect_chatbot_interaction
+    emailConvo = () => {
+        //console.log(this.props.messages);
+        let email = this.props.messages.map(msg => {
+            return <p>{msg.sender + ": '" + msg.message + "'"}</p>;
+        });
+        //email = email.join(' \n');
+        //console.log(email);
+        window.emailjs.send(
+            'gmail', 
+            'reflect_chatbot_interaction', 
+            {u_id: this.props.user, messages: email})
+            .then(res => {console.log('Email Sent')})
+            .catch(err => console.error('Email failed to send', err))
+    };
+
     render() {
         return (
             <React.Fragment>
@@ -46,6 +62,7 @@ class ChatInput extends Component {
                         }}
                     />
                     <button onClick={this.sendMessage} className="btn btn-primary submitBtn">Submit</button>
+                    <button onClick={this.emailConvo} >email conversation</button>
                 </div>
 
             </React.Fragment>
@@ -59,7 +76,8 @@ ChatInput.propTypes = {
 }
 
 const mapStateToProps = state => ({
-    user: state.sessionID.sessionID // Get unique session id to use for user each time page is loaded.
+    user: state.sessionID.sessionID, // Get unique session id to use for user each time page is loaded.
+    messages: state.messages.messages
 })
 
 export default connect(mapStateToProps, { sendMessage })(ChatInput);

@@ -9,63 +9,63 @@ import Button from 'react-bootstrap/Button';
 
 let values = [{
     name: "Achievement",
-    descript: "some descript"
+    descript: "to have important accomplishments"
 },
 {
     name: "Family",
-    descript: "some descript"
+    descript: "to have a happy, loving family"
 },
 {
     name: "Fun/Adventure",
-    descript: "some descript"
+    descript: "to play and have fun; to have new and exciting experiences"
 },
 {
     name: "Physical Health",
-    descript: "some descript"
+    descript: "to be physically well and healthy"
 },
 {
     name: "Mental Health",
-    descript: "some descript"
+    descript: "to be mentally well and healthy"
 },
 {
     name: "Independence",
-    descript: "some descript"
+    descript: "to be free from depending on others"
 },
 {
     name: "Purpose",
-    descript: "some descript"
+    descript: "to have meaning and direction in my life"
 },
 {
     name: "Self-esteem",
-    descript: "some descript"
+    descript: "to feel good about myself"
 },
 {
     name: "Wealth",
-    descript: "some descript"
+    descript: "to have plenty of money"
 },
 {
     name: "Friendship",
-    descript: "some descript"
+    descript: "to have close, supportive friends"
 },
 {
     name: "Virtue / Morality",
-    descript: "some descript"
+    descript: "to live a morally pure and excellent life"
 },
 {
     name: "Romance",
-    descript: "some descript"
+    descript: "to have intense, exciting love in my life"
 },
 {
     name: "Responsibility",
-    descript: "some descript"
+    descript: "to make and carry out responsible decisions"
 },
 {
     name: "Knowledge",
-    descript: "some descript"
+    descript: "to learn and contribute valuable knowledge"
 },
 {
     name: "Acceptance",
-    descript: "some descript"
+    descript: "to be accepted as I am"
 }];
 var maxValuesAllowed = 3;
 
