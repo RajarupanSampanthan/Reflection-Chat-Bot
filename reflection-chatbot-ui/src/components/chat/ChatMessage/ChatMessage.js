@@ -8,7 +8,7 @@ const ChatMessage = ({ msg: { id, sender, receiver, message } }) => {
         sender === "Bot" ? (
             <div className="msgContainer leftJustify">
                 <div className="bot-messages-img">
-                    <img src={BotIcon} />
+                    <img src={BotIcon} alt="chatbot icon"/>
                 
                 <div className="sender-label bot-msg-label">ReflectBot</div>
                 </div>
@@ -23,7 +23,7 @@ const ChatMessage = ({ msg: { id, sender, receiver, message } }) => {
                         <div className="msgText userText display-linebreak">{message}</div>
                     </div>
                     <div className="bot-messages-img">
-                        <img src={UserIcon} />
+                        <img src={UserIcon} alt="user icon"/>
 
                         <div className="sender-label user-msg-label">User</div>
                     </div>

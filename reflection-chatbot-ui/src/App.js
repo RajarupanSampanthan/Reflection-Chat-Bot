@@ -6,15 +6,30 @@ import ConsentForm from './components/dialogues/ConsentForm';
 import ChatPanel from './components/chat/ChatPanel';
 
 import store from './store';
+import ValueSelection from './components/valueSelection/ValueSelection';
 
 class App extends Component {
-  state = {showConsentForm: true};
+  state = {
+    showConsentForm: true,
+    showValueSelect: true
+  };
 
   closeConsentForm = () => {
-    this.setState({ showConsentForm: false});
+    this.setState({ showConsentForm: false });
+  };
+
+  exitValueSelect = () => {
+    this.setState({ showValueSelect: false });
   };
 
   render() {
+    let content;
+    if (this.state.showValueSelect===false) {
+      content = <ChatPanel />;
+    }
+    else {
+      content = <ValueSelection exitValueSelect={this.exitValueSelect} />;
+    }
     return (
       <Provider store={store}>
         <div>
@@ -22,7 +37,7 @@ class App extends Component {
             <h2>Reflect Chatbot ECE496 2019 - 2020</h2>
           </header>
           <ConsentForm show={this.state.showConsentForm} handleClose={this.closeConsentForm} />
-          <ChatPanel />
+          {content}
         </div>
       </Provider>
     );

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { fetchMessages } from '../../actions/messageActions';
-import BotIcon from "./chatbot_icon.png";
+//import BotIcon from "./chatbot_icon.png";
 import ScrollToBottom from 'react-scroll-to-bottom';
 import './ChatMessages.css';
 import ChatMessage from './ChatMessage/ChatMessage';
