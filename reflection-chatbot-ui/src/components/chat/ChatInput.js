@@ -31,7 +31,7 @@ class ChatInput extends Component {
     emailConvo = () => {
         //console.log(this.props.messages);
         let email = this.props.messages.map(msg => {
-            return <p>{msg.sender + ": '" + msg.message + "'"}</p>;
+            return msg.sender + ": '" + msg.message + "'";
         });
         //email = email.join(' \n');
         //console.log(email);
