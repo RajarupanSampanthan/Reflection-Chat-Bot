@@ -5,67 +5,96 @@ import { sendMessage } from '../../actions/messageActions';
 import SelectableCard from './selectableCard/SelectableCard';
 import './ValueSelection.css';
 import Button from 'react-bootstrap/Button';
-
+import AchieveIcon from './ValueIcons/AchievementIcon.png';
+import FamilyIcon from './ValueIcons/family.png';
+import AdventureIcon from './ValueIcons/fun.png';
+import HealthIcon from './ValueIcons/health.png';
+import MindfulnessIcon from './ValueIcons/mindfulness.png';
+import IndependenceIcon from './ValueIcons/independence.png';
+import PurposeIcon from './ValueIcons/purpose.png';
+import SelfEsteemIcon from './ValueIcons/self-esteem.png';
+import WealthIcon from './ValueIcons/wealth.png';
+import FriendshipIcon from './ValueIcons/friendship.png';
+import MoralityIcon from './ValueIcons/morality.png';
+import RomanceIcon from './ValueIcons/romance.png';
+import ResponsibilityIcon from './ValueIcons/Responsibility.png';
+import KnowledgeIcon from './ValueIcons/knowledge.png';
+import AcceptanceIcon from './ValueIcons/acceptance.png';
 
 let values = [{
     name: "Achievement",
-    descript: "to have important accomplishments"
+    descript: "to have important accomplishments",
+    icon: AchieveIcon
 },
 {
     name: "Family",
-    descript: "to have a happy, loving family"
+    descript: "to have a happy, loving family",
+    icon: FamilyIcon
 },
 {
-    name: "Fun/Adventure",
-    descript: "to play and have fun; to have new and exciting experiences"
+    name: "Fun",
+    descript: "to play and have fun; to have new and exciting experiences",
+    icon: AdventureIcon
 },
 {
     name: "Physical Health",
-    descript: "to be physically well and healthy"
+    descript: "to be physically well and healthy",
+    icon: HealthIcon
 },
 {
-    name: "Mental Health",
-    descript: "to be mentally well and healthy"
+    name: "Mindfulness",
+    descript: "to be mentally well and healthy",
+    icon: MindfulnessIcon
 },
 {
     name: "Independence",
-    descript: "to be free from depending on others"
+    descript: "to be free from depending on others",
+    icon: IndependenceIcon
 },
 {
     name: "Purpose",
-    descript: "to have meaning and direction in my life"
+    descript: "to have meaning and direction in my life",
+    icon: PurposeIcon
 },
 {
     name: "Self-esteem",
-    descript: "to feel good about myself"
+    descript: "to feel good about myself",
+    icon: SelfEsteemIcon
 },
 {
     name: "Wealth",
-    descript: "to have plenty of money"
+    descript: "to have plenty of money",
+    icon: WealthIcon
 },
 {
     name: "Friendship",
-    descript: "to have close, supportive friends"
+    descript: "to have close, supportive friends",
+    icon: FriendshipIcon
 },
 {
-    name: "Virtue / Morality",
-    descript: "to live a morally pure and excellent life"
+    name: "Morality",
+    descript: "to live a morally pure and excellent life",
+    icon: MoralityIcon
 },
 {
     name: "Romance",
-    descript: "to have intense, exciting love in my life"
+    descript: "to have intense, exciting love in my life",
+    icon: RomanceIcon
 },
 {
     name: "Responsibility",
-    descript: "to make and carry out responsible decisions"
+    descript: "to make and carry out responsible decisions",
+    icon: ResponsibilityIcon
 },
 {
     name: "Knowledge",
-    descript: "to learn and contribute valuable knowledge"
+    descript: "to learn and contribute valuable knowledge",
+    icon: KnowledgeIcon
 },
 {
     name: "Acceptance",
-    descript: "to be accepted as I am"
+    descript: "to be accepted as I am",
+    icon: AcceptanceIcon
 }];
 var maxValuesAllowed = 3;
 
@@ -128,7 +157,7 @@ class ValueSelection extends Component {
                     <div className='cardDisplay'>
                         {values.map((value) => (
                             <div key={value.name}>
-                                <SelectableCard isSelected={this.state.chosenVals.includes(value.name)} onClick={this.selectVal} title={value.name} descript={value.descript} />
+                                <SelectableCard isSelected={this.state.chosenVals.includes(value.name)} onClick={this.selectVal} title={value.name} descript={value.descript} icon={value.icon}/>
                             </div>
                         ))}
                     </div>
