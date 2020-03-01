@@ -154,3 +154,109 @@ class ActionCheckBehaviourNum(Action):
 			dispatcher.utter_message("I've only detected {} activity(ies) from your response".format(str(num_action)))
 			return [SlotSet('num_act', 'less')]
 
+class ActionSwitchActivity(Action):
+	def name(self):
+		return 'action_switch_activity'
+
+	def run(self, dispatcher, tracker, domain):
+		if not tracker.get_slot('acts_done'):
+			# TODO - switch activities to 1, 2, 3
+			if not tracker.get_slot('curr_act'):
+				dispatcher.utter_message("First, let focus on {}.".format(tracker.get_slot('act_1')))
+				return [SlotSet('acts_done', False), SlotSet('curr_act', tracker.get_slot('act_1'))]
+			elif tracker.get_slot('curr_act') == tracker.get_slot('act_1'):
+				dispatcher.utter_message("Now we will focus on {}.".format(tracker.get_slot('act_2')))
+				return [SlotSet('acts_done', False), SlotSet('curr_act', tracker.get_slot('act_2'))]
+			elif tracker.get_slot('curr_act') == tracker.get_slot('act_2'):
+				dispatcher.utter_message("Last but not least, let's talk about {}.".format(tracker.get_slot('act_3')))
+				return [SlotSet('acts_done', False), SlotSet('curr_act', tracker.get_slot('act_3'))]
+			elif tracker.get_slot('curr_act') == tracker.get_slot('act_3'):
+				dispatcher.utter_message("We will now ask you questions on your overall behaviour!")
+				return [SlotSet('acts_done', True), SlotSet('curr_act', 'general')]
+
+
+class ActionCheckWeeklyHour(Action):
+	# TODO - check the number written in text e.g. "two" as suppose to "2"
+	def name(self):
+		return 'check_weekly_hour'
+
+	def run(self, dispatcher, tracker, domain):
+		weekly_hour = float(next(tracker.get_latest_entity_values('number'), None))
+		curr_act = tracker.get_slot('curr_act')
+		if weekly_hour > 168:
+			dispatcher.utter_message("There are only 168 hours in a week! Please enter a valid number of hour.")
+			return []
+		elif weekly_hour <= 0:
+			dispatcher.utter_message("It seems impossible to spend less than 0 hours on an activity. Please enter a valid value!")
+			return []
+		elif weekly_hour > 50:
+			dispatcher.utter_message("Are you sure you spend {} weekly on {}? ".format(str(weekly_hour), curr_act) + \
+				"It would mean you spend more than about 7 hours per day on {}".format(curr_act))
+		else:
+			dispatcher.utter_message("You spend {} hours weekly on {}, correct?".format(str(weekly_hour), curr_act))
+
+		return [SlotSet('act1_time' if curr_act == tracker.get_slot('act_1') else ('act2_time' if curr_act == tracker.get_slot('act_2') else 'act3_time'), weekly_hour)]
+
+class ActionSetActAlign(Action):
+	def name(self):
+		return 'set_act_align'
+
+	def run(self, dispatcher, tracker, domain):
+		curr_act = tracker.get_slot('curr_act')
+		if tracker.latest_message['intent'].get('name') == 'affirm':
+			alignment = True
+		elif tracker.latest_message['intent'].get('name') == 'deny':
+			alignment = False
+
+		return [SlotSet('act1_align' if curr_act == tracker.get_slot('act_1') else ('act2_align' if curr_act == tracker.get_slot('act_2') else 'act3_align'), alignment)]
+
+class ActionSetActCont(Action):
+	def name(self):
+		return 'set_act_cont'
+
+	def run(self, dispatcher, tracker, domain):
+		curr_act = tracker.get_slot('curr_act')
+		if tracker.latest_message['intent'].get('name') == 'affirm':
+			cont = True
+		elif tracker.latest_message['intent'].get('name') == 'deny':
+			cont = False
+
+		return [SlotSet('act1_cont' if curr_act == tracker.get_slot('act_1') else ('act2_cont' if curr_act == tracker.get_slot('act_2') else 'act3_cont'), cont)]
+
+
+class ActionAskWhyCont(Action):
+	def name(self):
+		return 'ask_why_cont'
+
+	def run(self, dispatcher, tracker, domain):
+		curr_act = tracker.get_slot('curr_act')
+		value_focus = tracker.get_slot('value_focus')
+
+		if curr_act == tracker.get_slot('act_1'):
+			is_align = tracker.get_slot('act1_align')
+			will_cont = tracker.get_slot('act1_cont')
+		elif curr_act == tracker.get_slot('act_2'):
+			is_align = tracker.get_slot('act2_align')
+			will_cont = tracker.get_slot('act2_cont')
+		elif curr_act == tracker.get_slot('act_3'):
+			is_align = tracker.get_slot('act3_align')
+			will_cont = tracker.get_slot('act3_cont')
+
+		if not is_align and will_cont:
+			dispatcher.utter_message("You think {} is not aligned with {}, why do you think you should continue {}?".format(curr_act, value_focus, curr_act))
+		elif is_align and not will_cont:
+			dispatcher.utter_message("You think {} is aligned with {}, why do you think you should not continue {}?".format(curr_act, value_focus, curr_act))
+
+		return []
+
+
+
+
+
+
+
+
+
+
+
+

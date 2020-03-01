@@ -3,9 +3,16 @@
 actions:
 - action_explain_value
 - action_repeat
+- action_switch_activity
+- ask_why_cont
 - check_behaviour_num
 - check_value_num
+- check_weekly_hour
+- set_act_align
+- set_act_cont
+- utter_activity_done
 - utter_agree_interesting
+- utter_ask_hour_on_act
 - utter_ask_stop
 - utter_cheer_up
 - utter_confirm_activities
@@ -15,20 +22,29 @@ actions:
 - utter_goodbye
 - utter_greet
 - utter_happy
+- utter_how_is_aligned
 - utter_iamabot
+- utter_is_activity_aligned
 - utter_next_section
 - utter_select_a_value
 - utter_state_chatbot_purpose
+- utter_why_spend_time
+- utter_will_continue_act
 - utter_your_top_activities
 - utter_your_top_activities_again
 entities:
 - activity
+- number
 - value
 intents:
+- inform:
+    use_entities: []
+- describe_hour
 - behaviour_describe
+- deny
 - affirm
 - choose_value
-- deny
+- number_input
 - stop_convo
 - greet
 - explain_value
@@ -42,11 +58,39 @@ intents:
 - sounds_boring:
     use_entities: []
 slots:
+  act1_align:
+    type: bool
+  act1_cont:
+    type: bool
+  act1_time:
+    max_value: 168.0
+    min_value: 0.0
+    type: float
+  act2_align:
+    type: bool
+  act2_cont:
+    type: bool
+  act2_time:
+    max_value: 168.0
+    min_value: 0.0
+    type: float
+  act3_align:
+    type: bool
+  act3_cont:
+    type: bool
+  act3_time:
+    max_value: 168.0
+    min_value: 0.0
+    type: float
   act_1:
     type: text
   act_2:
     type: text
   act_3:
+    type: text
+  acts_done:
+    type: bool
+  curr_act:
     type: text
   num_act:
     type: categorical
@@ -80,9 +124,14 @@ slots:
     - knowledge
     - acceptance
 templates:
+  utter_activity_done:
+  - text: Thanks for answering these questions!
+  - text: That's it for {curr_act}.
   utter_agree_interesting:
   - text: Interesting, right? Why don't you try it now! Choose a value important to
       you.
+  utter_ask_hour_on_act:
+  - text: On average, how many hours do you spend time on {curr_act} in a week?
   utter_ask_stop:
   - text: Are you sure you want to stop session?
   - text: Are you sure you want to stop the conversation?
@@ -105,8 +154,12 @@ templates:
   - text: Hey! How are you?
   utter_happy:
   - text: Great, carry on!
+  utter_how_is_aligned:
+  - text: You think {curr_act} is aligned with {value_focus}, can you explain how?
   utter_iamabot:
   - text: I am a bot, powered by Rasa.
+  utter_is_activity_aligned:
+  - text: Do you think {curr_act} is aligned with {value_focus}?
   utter_next_section:
   - text: Next I will ask you your thoughts on the activities you have chosen with
       relation to your most important value - {value_focus}.
@@ -117,6 +170,11 @@ templates:
   - text: My purpose is to help you reflect on whether your actions and one of your
       important values are aligned. Try it out! Select a value important to you from
       the above list.
+  utter_why_spend_time:
+  - text: You belive {curr_act} does not align with {value_focus}, why do you spend
+      time on {curr_act}?
+  utter_will_continue_act:
+  - text: Do you think you shuold continue {curr_act}?
   utter_your_top_activities:
   - text: I would like to know how you spend your time - this will help you to reflect
       later on. What are the top three activities you spent most of your time doing

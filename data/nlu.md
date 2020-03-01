@@ -3,22 +3,23 @@
 - indeed
 - of course
 - that sounds good
-- correct
 - yes, that is correct
-- yes
-- yup
-- yes
-- ya
-- yes
 - that is correct
-- that is correct
-- yes
-- yes
-- yes
 - correct
-- yes
-- yes
+- yup
+- that't correct
+- that's right
+- that is correct
+- yea
+- that's right
 - ya
+- yes
+- yes
+- yes
+- yes
+- yes
+- yes
+- yes
 - yes
 
 ## intent:behaviour_describe
@@ -39,6 +40,26 @@
 - [sleeping](activity), [fixing](activity) my lamp
 - [sleeping](activity), [eating](activity), [working](activity), [studying](activity)
 - [working](activity), [sleeping](activity), [drinking](activity)
+- [jogging](activity), [exercising](activity), [reading](activity)
+- [reading](activity), [exercising](activity), [working](activity)
+- [reading](activity), [playing computer games](activity), [jogging](activity)
+- [painting](activity), [reading](activity), [watching tv](activity)
+- [watching tv](activity), [playing video games](activity), [partying](activity)
+- [reading](activity), [singing](activity), [dancing](activity)
+- [watching netflix](activity), [studying](activity), [reading](activity)
+- [reading](activity), [cooking](activity), [painting](activity)
+- [reading](activity), [writing](activity), and [drawing](activity)
+- [watching youtube](activity), [cooking](activity), and [reading](activity)
+- [reading](activity), [playing computer games](activity), [exercising](activity)
+- [exercising with boyfriend](activity), [playing computer games](activity), [painting](activity)
+- [exercising](activity), [singing](activity), [studying](activity)
+- [swimming](activity), [exercising](activity), [singing](activity)
+- [swimming](activity), [exercising](activity), [singing](activity)
+- [spending time with friends](activity), [cooking](activity), [studying](activity)
+- [watching videos](activity), [exercising](activity), [playing video games](activity)
+- [exercising](activity), [playing video games](activity), [watching tv](activity)
+- [exercising](activity), [playing video game](activity), [reading](activity)
+- [exercising](activity), [reading](activity), [painting](activity)
 
 ## intent:bot_challenge
 - are you a bot?
@@ -93,13 +114,9 @@
 - [freindship](value)
 - [friendship](value)
 - [health](value) and [wealth](value)
-- [health](value)
+- [mindfulness](value)
+- [romance](value)
 - [family](value)
-- [wealth](value)
-- [family](value)
-- [health](value)
-- [wealth](value)
-- [fun](value)
 
 ## intent:deny
 - no
@@ -109,11 +126,51 @@
 - no way
 - not really
 - actually, I changed my mind
+- not really
 - no
 - no
 - no
 - no
 - no
+- no
+- no
+- no
+- no
+- no
+
+## intent:describe_hour
+- about [3](number) hours per week
+- about [2](number) hours
+- [1.5](number) hours
+- [-16](number) hours
+- about [7](number) hours
+- [2](number) hours
+- about [2](number) hours
+- [200](number) hours
+- about [16](number) hours
+- about [5](number) hours
+- about [6](number) hours
+- i think it's about [15](number) hours
+- [5](number) hours
+- [6](number) hours
+- about [10](number) hours
+- about  [3](number) hours
+- [3](number) hours
+- [3](number) hours
+- about [5](number) hours per week
+- [10](number) hours
+- [8](number) hours
+- [8](number) hours
+- about [12](number) hours
+- about [10](number) hours per week
+- [20](number) hours
+- more than [10](number) hours
+- about [10](number) hours
+- [20](number) hours
+- [20.5](number) hours
+- about [10](number) hours
+- about [5](number) hours
+- about [2](number) hours
 
 ## intent:explain_chatbot_purpose
 - what can you help me do?
@@ -165,7 +222,41 @@
 - good morning
 - good evening
 - hey there
-- hello
+
+## intent:inform
+- because I enjoy reading
+- because I like it
+- I think it helps me imporve my artistic skills
+- because it helps me relax
+- reading clears my mind, it helps me be more aware of my life
+- because it provides entertainment for me
+- i enjoy reading
+- Because we got to imporve our relationship, while maintaining a good fitness level
+- exercising makes my body strong, less sickness
+- it helps me build [endurance](value) and cardio
+- because it is good for my [health](value)
+- because [health](value) is also important to me and [swimming](activity) helps improving my health
+- because I want to maintain a good relationship with them
+- because [friendship](value) is also important to me
+- because I can make healthy food for myself
+- because it takes so much of my time
+- because I have to
+- because I am still in school
+- because it is [fun](value)
+- it increase my stamina and [strength](value)
+- because it is addicting
+- exercising helps me focus, it also pumps blood into my brain. activating it
+- because I am addicted to it
+- to be entertained and get recent news
+- because without it, I wouldn't learn about the news
+- because I exercise with my partner
+- because I enjoy [playing video games](activity)
+- because reading is a nice activity to do
+- because it is a good habit
+- because it makes me stronger and healtier
+- because it is important to my [health](value)
+- because it is [fun](value)
+- because I paint with my family
 
 ## intent:mood_great
 - perfect
@@ -188,6 +279,25 @@
 - not very good
 - extremely sad
 - so sad
+
+## intent:number_input
+- [0](number)
+- [1](number)
+- [2](number)
+- [3](number)
+- [4](number)
+- [5](number)
+- [6](number)
+- [7](number)
+- [8](number)
+- [9](number)
+- [10](number)
+- [11](number)
+- [-1](number)
+- [20](number)
+- about [5](number)
+- [160](number)
+- about [5](number) huors
 
 ## intent:sounds_boring
 - sounds lame

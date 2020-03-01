@@ -244,7 +244,7 @@
     - slot{"act_3": "exercising"}
     - utter_confirm_activities
 * affirm
-    - utter_next_section
+> activity_focus
 
 ## interactive_story_1
 * choose_value{"value": "health"}
@@ -291,7 +291,7 @@
     - slot{"act_3": "singing"}
     - utter_confirm_activities
 * affirm
-    - utter_next_section
+> activity_focus
 
 ## interactive_story_1
 * choose_value{"value": "fun"}
@@ -321,4 +321,718 @@
     - slot{"act_3": "drinking"}
     - utter_confirm_activities
 * affirm
+> activity_focus
+
+## interactive_story_1
+* choose_value{"value": "health"}
+    - check_value_num
+    - slot{"num_value": "one"}
+    - slot{"value_focus": "health"}
+    - utter_confirm_value
+* affirm
+    - utter_your_top_activities
+* behaviour_describe{"activity": "reading"}
+    - check_behaviour_num
+    - slot{"num_act": "three"}
+    - slot{"act_1": "jogging"}
+    - slot{"act_2": "exercising"}
+    - slot{"act_3": "reading"}
+    - utter_confirm_activities
+* affirm
+> activity_focus
+    
+
+## interactive_story_1
+* choose_value{"value": "fun"}
+    - check_value_num
+    - slot{"num_value": "one"}
+    - slot{"value_focus": "fun"}
+    - utter_confirm_value
+* affirm
+    - utter_your_top_activities
+* behaviour_describe{"activity": "working"}
+    - check_behaviour_num
+    - slot{"num_act": "three"}
+    - slot{"act_1": "reading"}
+    - slot{"act_2": "exercising"}
+    - slot{"act_3": "working"}
+    - utter_confirm_activities
+* affirm
+> activity_focus
+
+## interactive_story_1
+* choose_value{"value": "wealth"}
+    - check_value_num
+    - slot{"num_value": "one"}
+    - slot{"value_focus": "wealth"}
+    - utter_confirm_value
+* affirm
+    - utter_your_top_activities
+* behaviour_describe{"activity": "jogging"}
+    - check_behaviour_num
+    - slot{"num_act": "three"}
+    - slot{"act_1": "reading"}
+    - slot{"act_2": "playing computer games"}
+    - slot{"act_3": "jogging"}
+    - utter_confirm_activities
+* affirm
+> activity_focus
+
+## interactive_story_1
+* choose_value{"value": "health"}
+    - check_value_num
+    - slot{"num_value": "one"}
+    - slot{"value_focus": "health"}
+    - utter_confirm_value
+* affirm
+    - utter_your_top_activities
+* behaviour_describe{"activity": "watching tv"}
+    - check_behaviour_num
+    - slot{"num_act": "three"}
+    - slot{"act_1": "painting"}
+    - slot{"act_2": "reading"}
+    - slot{"act_3": "watching tv"}
+    - utter_confirm_activities
+* affirm
+> activity_focus
+
+## interactive_story_1
+* choose_value{"value": "fun"}
+    - check_value_num
+    - slot{"num_value": "one"}
+    - slot{"value_focus": "fun"}
+    - utter_confirm_value
+* affirm
+    - utter_your_top_activities
+* behaviour_describe{"activity": "reading"}
+    - check_behaviour_num
+    - slot{"num_act": "three"}
+    - slot{"act_1": "reading"}
+    - slot{"act_2": "sleeping"}
+    - slot{"act_3": "reading"}
+    - utter_confirm_activities
+* deny
+    - utter_your_top_activities_again
+* behaviour_describe{"activity": "partying"}
+    - check_behaviour_num
+    - slot{"num_act": "three"}
+    - slot{"act_1": "watching tv"}
+    - slot{"act_2": "playing video games"}
+    - slot{"act_3": "partying"}
+    - utter_confirm_activities
+* affirm
+> activity_focus
+
+## interactive_story_1
+* choose_value{"value": "purpose"}
+    - check_value_num
+    - slot{"num_value": "one"}
+    - slot{"value_focus": "purpose"}
+    - utter_confirm_value
+* affirm
+    - utter_your_top_activities
+* behaviour_describe{"activity": "dancing"}
+    - check_behaviour_num
+    - slot{"num_act": "three"}
+    - slot{"act_1": "reading"}
+    - slot{"act_2": "singing"}
+    - slot{"act_3": "dancing"}
+    - utter_confirm_activities
+* affirm
+> activity_focus
+
+## interactive_story_1
+* choose_value{"value": "health"}
+    - check_value_num
+    - slot{"num_value": "one"}
+    - slot{"value_focus": "health"}
+    - utter_confirm_value
+* affirm
+    - utter_your_top_activities
+* behaviour_describe{"activity": "reading"}
+    - check_behaviour_num
+    - slot{"num_act": "three"}
+    - slot{"act_1": "watching netflix"}
+    - slot{"act_2": "studying"}
+    - slot{"act_3": "reading"}
+    - utter_confirm_activities
+* affirm
+> activity_focus
+
+## interactive_story_1
+* choose_value{"value": "health"}
+    - check_value_num
+    - slot{"num_value": "one"}
+    - slot{"value_focus": "health"}
+    - utter_confirm_value
+* affirm
+    - utter_your_top_activities
+* behaviour_describe{"activity": "reading"}
+    - check_behaviour_num
+    - slot{"num_act": "three"}
+    - slot{"act_1": "watching netflix"}
+    - slot{"act_2": "studying"}
+    - slot{"act_3": "reading"}
+    - utter_confirm_activities
+* affirm
+> activity_focus
+
+## interactive_story_1
+* choose_value{"value": "family"}
+    - check_value_num
+    - slot{"num_value": "one"}
+    - slot{"value_focus": "family"}
+    - utter_confirm_value
+* affirm
+    - utter_your_top_activities
+* behaviour_describe{"activity": "painting"}
+    - check_behaviour_num
+    - slot{"num_act": "three"}
+    - slot{"act_1": "reading"}
+    - slot{"act_2": "cooking"}
+    - slot{"act_3": "painting"}
+    - utter_confirm_activities
+* affirm
+> activity_focus
+
+## interactive_story_1
+* choose_value{"value": "mindfulness"}
+    - check_value_num
+    - slot{"num_value": "one"}
+    - slot{"value_focus": "mindfulness"}
+    - utter_confirm_value
+* affirm
+    - utter_your_top_activities
+* behaviour_describe{"activity": "drawing"}
+    - check_behaviour_num
+    - slot{"num_act": "three"}
+    - slot{"act_1": "reading"}
+    - slot{"act_2": "writing"}
+    - slot{"act_3": "drawing"}
+    - utter_confirm_activities
+* affirm
+> activity_focus
+
+## interactive_story_1
+* choose_value{"value": "health"}
+    - check_value_num
+    - slot{"num_value": "one"}
+    - slot{"value_focus": "health"}
+    - utter_confirm_value
+* affirm
+    - utter_your_top_activities
+* behaviour_describe{"activity": "reading"}
+    - check_behaviour_num
+    - slot{"num_act": "three"}
+    - slot{"act_1": "watching youtube"}
+    - slot{"act_2": "cooking"}
+    - slot{"act_3": "reading"}
+    - utter_confirm_activities
+* affirm
+> activity_focus
+
+## interactive_story_1
+* choose_value{"value": "wealth"}
+    - check_value_num
+    - slot{"num_value": "one"}
+    - slot{"value_focus": "wealth"}
+    - utter_confirm_value
+* affirm
+    - utter_your_top_activities
+* behaviour_describe{"activity": "exercising"}
+    - check_behaviour_num
+    - slot{"num_act": "three"}
+    - slot{"act_1": "reading"}
+    - slot{"act_2": "playing computer games"}
+    - slot{"act_3": "exercising"}
+    - utter_confirm_activities
+* affirm
+> activity_focus
+
+## interactive_story_1
+* choose_value{"value": "romance"}
+    - check_value_num
+    - slot{"num_value": "one"}
+    - slot{"value_focus": "romance"}
+    - utter_confirm_value
+* affirm
+    - utter_your_top_activities
+* behaviour_describe{"activity": "painting"}
+    - check_behaviour_num
+    - slot{"num_act": "three"}
+    - slot{"act_1": "exercising with boyfriend"}
+    - slot{"act_2": "playing computer games"}
+    - slot{"act_3": "painting"}
+    - utter_confirm_activities
+* affirm
+> activity_focus
+
+## interactive_story_1
+* choose_value{"value": "health"}
+    - check_value_num
+    - slot{"num_value": "one"}
+    - slot{"value_focus": "health"}
+    - utter_confirm_value
+* affirm
+    - utter_your_top_activities
+* behaviour_describe{"activity": "studying"}
+    - check_behaviour_num
+    - slot{"num_act": "three"}
+    - slot{"act_1": "exercising"}
+    - slot{"act_2": "singing"}
+    - slot{"act_3": "studying"}
+    - utter_confirm_activities
+* affirm
+> activity_focus
+
+## interactive_story_1
+* choose_value{"value": "health"}
+    - check_value_num
+    - slot{"num_value": "one"}
+    - slot{"value_focus": "health"}
+    - utter_confirm_value
+* affirm
+    - utter_your_top_activities
+* behaviour_describe{"activity": "singing"}
+    - check_behaviour_num
+    - slot{"num_act": "three"}
+    - slot{"act_1": "swimming"}
+    - slot{"act_2": "exercising"}
+    - slot{"act_3": "singing"}
+    - utter_confirm_activities
+* affirm
+> activity_focus
+
+## interactive_story_1
+* choose_value{"value": "wealth"}
+    - check_value_num
+    - slot{"num_value": "one"}
+    - slot{"value_focus": "wealth"}
+    - utter_confirm_value
+* affirm
+    - utter_your_top_activities
+* behaviour_describe{"activity": "singing"}
+    - check_behaviour_num
+    - slot{"num_act": "three"}
+    - slot{"act_1": "swimming"}
+    - slot{"act_2": "exercising"}
+    - slot{"act_3": "singing"}
+    - utter_confirm_activities
+* affirm
+> activity_focus
+
+## interactive_story_1
+* choose_value{"value": "health"}
+    - check_value_num
+    - slot{"num_value": "one"}
+    - slot{"value_focus": "health"}
+    - utter_confirm_value
+* affirm
+    - utter_your_top_activities
+* behaviour_describe{"activity": "studying"}
+    - check_behaviour_num
+    - slot{"num_act": "three"}
+    - slot{"act_1": "spending time with friends"}
+    - slot{"act_2": "cooking"}
+    - slot{"act_3": "studying"}
+    - utter_confirm_activities
+* affirm
+> activity_focus
+
+
+> activity_focus
     - utter_next_section
+    - action_switch_activity
+    - slot{"acts_done": false}
+    - slot{"curr_act": "spending time with friends"}
+    - utter_ask_hour_on_act
+* describe_hour{"number": "3"}
+    - check_weekly_hour
+    - slot{"act1_time": 3.0}
+* affirm
+    - utter_is_activity_aligned
+* deny
+    - set_act_align
+    - slot{"act1_align": false}
+    - utter_why_spend_time
+* inform
+    - utter_will_continue_act
+* affirm
+    - set_act_cont
+    - slot{"act1_cont": true}
+    - ask_why_cont
+* inform{"value": "friendship"}
+    - utter_activity_done
+    - action_switch_activity
+    - slot{"acts_done": false}
+    - slot{"curr_act": "cooking"}
+    - utter_ask_hour_on_act
+* describe_hour{"number": "5"}
+    - check_weekly_hour
+    - slot{"act2_time": 5.0}
+* affirm
+    - utter_is_activity_aligned
+* affirm
+    - set_act_align
+    - slot{"act2_align": true}
+    - utter_how_is_aligned
+* inform
+    - utter_will_continue_act
+* deny
+    - set_act_cont
+    - slot{"act2_cont": false}
+    - ask_why_cont
+* inform
+    - utter_activity_done
+    - action_switch_activity
+    - slot{"acts_done": false}
+    - slot{"curr_act": "studying"}
+    - utter_ask_hour_on_act
+* describe_hour{"number": "10"}
+    - check_weekly_hour
+    - slot{"act3_time": 10.0}
+* affirm
+    - utter_is_activity_aligned
+* deny
+    - set_act_align
+    - slot{"act3_align": false}
+    - utter_why_spend_time
+* inform
+    - utter_will_continue_act
+* affirm
+    - set_act_cont
+    - slot{"act3_cont": true}
+    - ask_why_cont
+* inform
+    - utter_activity_done
+    - action_switch_activity
+    - slot{"acts_done": true}
+    - slot{"curr_act": "general"}
+
+## interactive_story_1
+* choose_value{"value": "health"}
+    - check_value_num
+    - slot{"num_value": "one"}
+    - slot{"value_focus": "health"}
+    - utter_confirm_value
+* affirm
+    - utter_your_top_activities
+* behaviour_describe{"activity": "playing video games"}
+    - check_behaviour_num
+    - slot{"num_act": "three"}
+    - slot{"act_1": "watching videos"}
+    - slot{"act_2": "exercising"}
+    - slot{"act_3": "playing video games"}
+    - utter_confirm_activities
+* affirm
+> activity_focus
+
+> activity_focus
+    - utter_next_section
+    - action_switch_activity
+    - slot{"acts_done": false}
+    - slot{"curr_act": "watching videos"}
+    - utter_ask_hour_on_act
+* describe_hour{"number": "8"}
+    - check_weekly_hour
+    - slot{"act1_time": 8.0}
+* affirm
+    - utter_is_activity_aligned
+* deny
+    - set_act_align
+    - slot{"act1_align": false}
+    - utter_why_spend_time
+* inform{"value": "fun"}
+    - utter_will_continue_act
+* deny
+    - set_act_cont
+    - slot{"act1_cont": false}
+    - utter_activity_done
+    - action_switch_activity
+    - slot{"acts_done": false}
+    - slot{"curr_act": "exercising"}
+    - utter_ask_hour_on_act
+* describe_hour{"number": "8"}
+    - check_weekly_hour
+    - slot{"act2_time": 8.0}
+* affirm
+    - utter_is_activity_aligned
+* affirm
+    - set_act_align
+    - slot{"act2_align": true}
+    - utter_how_is_aligned
+* inform{"value": "strength"}
+    - utter_will_continue_act
+* affirm
+    - set_act_cont
+    - slot{"act2_cont": true}
+    - utter_activity_done
+    - action_switch_activity
+    - slot{"acts_done": false}
+    - slot{"curr_act": "playing video games"}
+    - utter_ask_hour_on_act
+* describe_hour{"number": "12"}
+    - check_weekly_hour
+    - slot{"act3_time": 12.0}
+* affirm
+    - utter_is_activity_aligned
+* deny
+    - set_act_align
+    - slot{"act3_align": false}
+    - utter_why_spend_time
+* inform
+    - utter_will_continue_act
+* deny
+    - set_act_cont
+    - slot{"act3_cont": false}
+    - utter_activity_done
+    - action_switch_activity
+    - slot{"acts_done": true}
+    - slot{"curr_act": "general"}
+
+
+## interactive_story_1
+* choose_value{"value": "mindfulness"}
+    - check_value_num
+    - slot{"num_value": "one"}
+    - slot{"value_focus": "mindfulness"}
+    - utter_confirm_value
+* affirm
+    - utter_your_top_activities
+* behaviour_describe{"activity": "watching tv"}
+    - check_behaviour_num
+    - slot{"num_act": "three"}
+    - slot{"act_1": "exercising"}
+    - slot{"act_2": "playing video games"}
+    - slot{"act_3": "watching tv"}
+    - utter_confirm_activities
+* affirm
+    - utter_next_section
+    - action_switch_activity
+    - slot{"acts_done": false}
+    - slot{"curr_act": "exercising"}
+    - utter_ask_hour_on_act
+* describe_hour{"number": "10"}
+    - check_weekly_hour
+    - slot{"act1_time": 10.0}
+* affirm
+    - utter_is_activity_aligned
+* affirm
+    - set_act_align
+    - slot{"act1_align": true}
+    - utter_how_is_aligned
+* inform
+    - utter_will_continue_act
+* affirm
+    - set_act_cont
+    - slot{"act1_cont": true}
+    - utter_activity_done
+    - action_switch_activity
+    - slot{"acts_done": false}
+    - slot{"curr_act": "playing video games"}
+    - utter_ask_hour_on_act
+* describe_hour{"number": "20"}
+    - check_weekly_hour
+    - slot{"act2_time": 20.0}
+* affirm
+    - utter_is_activity_aligned
+* deny
+    - set_act_align
+    - slot{"act2_align": false}
+    - utter_why_spend_time
+* inform
+    - utter_will_continue_act
+* deny
+    - set_act_cont
+    - slot{"act2_cont": false}
+    - utter_activity_done
+    - action_switch_activity
+    - slot{"acts_done": false}
+    - slot{"curr_act": "watching tv"}
+    - utter_ask_hour_on_act
+* describe_hour{"number": "10"}
+    - check_weekly_hour
+    - slot{"act3_time": 10.0}
+* affirm
+    - utter_is_activity_aligned
+* deny
+    - set_act_align
+    - slot{"act3_align": false}
+    - utter_why_spend_time
+* inform
+    - utter_will_continue_act
+* affirm
+    - set_act_cont
+    - slot{"act3_cont": true}
+    - ask_why_cont
+* inform
+    - utter_activity_done
+    - action_switch_activity
+    - slot{"acts_done": true}
+    - slot{"curr_act": "general"}
+
+## interactive_story_1
+* choose_value{"value": "romance"}
+    - check_value_num
+    - slot{"num_value": "one"}
+    - slot{"value_focus": "romance"}
+    - utter_confirm_value
+* affirm
+> activity_focus
+
+> activity_focus
+    - utter_next_section
+    - action_switch_activity
+    - slot{"acts_done": false}
+    - slot{"curr_act": "watching videos"}
+    - utter_ask_hour_on_act
+* describe_hour{"number": "7"}
+    - check_weekly_hour
+    - slot{"act1_time": 7.0}
+* deny
+    - utter_ask_hour_on_act
+* describe_hour{"number": "8"}
+    - check_weekly_hour
+    - slot{"act1_time": 8.0}
+* affirm
+    - utter_is_activity_aligned
+* deny
+    - set_act_align
+    - slot{"act1_align": false}
+    - utter_why_spend_time
+* inform{"value": "fun"}
+    - utter_will_continue_act
+* deny
+    - set_act_cont
+    - slot{"act1_cont": false}
+    - utter_activity_done
+    - action_switch_activity
+    - slot{"acts_done": false}
+    - slot{"curr_act": "exercising"}
+    - utter_ask_hour_on_act
+* describe_hour{"number": "6"}
+    - check_weekly_hour
+    - slot{"act1_time": 6.0}
+* deny
+    - utter_ask_hour_on_act
+* describe_hour{"number": "8"}
+    - check_weekly_hour
+    - slot{"act2_time": 8.0}
+* affirm
+    - utter_is_activity_aligned
+* affirm
+    - set_act_align
+    - slot{"act2_align": true}
+    - utter_how_is_aligned
+* inform{"value": "strength"}
+    - utter_will_continue_act
+* affirm
+    - set_act_cont
+    - slot{"act2_cont": true}
+    - utter_activity_done
+    - action_switch_activity
+    - slot{"acts_done": false}
+    - slot{"curr_act": "playing video games"}
+    - utter_ask_hour_on_act
+* describe_hour{"number": "10"}
+    - check_weekly_hour
+    - slot{"act1_time": 10.0}
+* deny
+    - utter_ask_hour_on_act
+* describe_hour{"number": "12"}
+    - check_weekly_hour
+    - slot{"act3_time": 12.0}
+* affirm
+    - utter_is_activity_aligned
+* deny
+    - set_act_align
+    - slot{"act3_align": false}
+    - utter_why_spend_time
+* inform
+    - utter_will_continue_act
+* deny
+    - set_act_cont
+    - slot{"act3_cont": false}
+    - utter_activity_done
+    - action_switch_activity
+    - slot{"acts_done": true}
+    - slot{"curr_act": "general"}
+## interactive_story_1
+* choose_value{"value": "family"}
+    - check_value_num
+    - slot{"num_value": "one"}
+    - slot{"value_focus": "family"}
+    - utter_confirm_value
+* affirm
+    - utter_your_top_activities
+* behaviour_describe{"activity": "painting"}
+    - check_behaviour_num
+    - slot{"num_act": "three"}
+    - slot{"act_1": "exercising"}
+    - slot{"act_2": "reading"}
+    - slot{"act_3": "painting"}
+    - utter_confirm_activities
+* affirm
+    - utter_next_section
+    - action_switch_activity
+    - slot{"acts_done": false}
+    - slot{"curr_act": "exercising"}
+    - utter_ask_hour_on_act
+* describe_hour{"number": "10"}
+    - check_weekly_hour
+    - slot{"act1_time": 10.0}
+* affirm
+    - utter_is_activity_aligned
+* deny
+    - set_act_align
+    - slot{"act1_align": false}
+    - utter_why_spend_time
+* inform
+    - utter_will_continue_act
+* affirm
+    - set_act_cont
+    - slot{"act1_cont": true}
+    - ask_why_cont
+* inform{"value": "health"}
+    - utter_activity_done
+    - action_switch_activity
+    - slot{"acts_done": false}
+    - slot{"curr_act": "reading"}
+    - utter_ask_hour_on_act
+* describe_hour{"number": "5"}
+    - check_weekly_hour
+    - slot{"act2_time": 5.0}
+* affirm
+    - utter_is_activity_aligned
+* deny
+    - set_act_align
+    - slot{"act2_align": false}
+    - utter_why_spend_time
+* inform{"value": "fun"}
+    - utter_will_continue_act
+* deny
+    - set_act_cont
+    - slot{"act2_cont": false}
+    - utter_activity_done
+    - action_switch_activity
+    - slot{"acts_done": false}
+    - slot{"curr_act": "painting"}
+    - utter_ask_hour_on_act
+* describe_hour{"number": "2"}
+    - check_weekly_hour
+    - slot{"act3_time": 2.0}
+* affirm
+    - utter_is_activity_aligned
+* affirm
+    - set_act_align
+    - slot{"act3_align": true}
+    - utter_how_is_aligned
+* inform
+    - utter_will_continue_act
+* affirm
+    - set_act_cont
+    - slot{"act3_cont": true}
+    - utter_activity_done
+    - action_switch_activity
+    - slot{"acts_done": true}
+    - slot{"curr_act": "general"}
