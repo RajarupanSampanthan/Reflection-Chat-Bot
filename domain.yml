@@ -21,6 +21,8 @@ actions:
 - utter_state_chatbot_purpose
 - utter_your_top_activities
 - utter_your_top_activities_again
+- utter_feedbacks
+
 entities:
 - activity
 - value
@@ -33,6 +35,7 @@ intents:
 - greet
 - explain_value
 - explain_chatbot_purpose
+- feedbacks
 - sounds_cool:
     use_entities: []
 - goodbye
@@ -127,3 +130,12 @@ templates:
   - text: What are the top three activities you spent most of your time doing in the
       past week? (Hint - use more generic activities such as 'exercising' as suppose
       to 'dragon boating').
+  utter_feedbacks:
+  - text: On scale of 1-10, how well do you think reflection Chatbot understands your inputs?
+  - text: On scale of 1-10, how much are you motivated to make a change to your life?
+  - text: On scale of 1-10, how comfortable for you to answer questions the Chatbot asks?
+  - text: On scale of 1-10, how well the Chatbot help you find out whether or not your actions and your important values align?
+  - text: On scale of 1-10, what will be the chance for you to recommend this Chatbot to your family or friends?
+  - text: On scale of 1-10, how well the Chatbot help you to come up with a new goal to make improvements?
+  - text: On scale of 1-10, how relevant are the follow-up questions Chatbot asks?
+  - text: On scale of 1-10, how much do you think reflection chatbot can have positive impact on users?
