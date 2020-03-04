@@ -3,6 +3,8 @@
 actions:
 - action_explain_value
 - action_repeat
+- action_report_weekly_time
+- action_set_other_time
 - action_switch_activity
 - ask_why_cont
 - check_behaviour_num
@@ -12,7 +14,9 @@ actions:
 - set_act_cont
 - utter_activity_done
 - utter_agree_interesting
+- utter_ask_good_behaviour
 - utter_ask_hour_on_act
+- utter_ask_other_activity
 - utter_ask_stop
 - utter_cheer_up
 - utter_confirm_activities
@@ -37,14 +41,14 @@ entities:
 - number
 - value
 intents:
-- inform:
-    use_entities: []
+- deny
+- number_input
 - describe_hour
 - behaviour_describe
-- deny
-- affirm
 - choose_value
-- number_input
+- affirm
+- inform:
+    use_entities: []
 - stop_convo
 - greet
 - explain_value
@@ -105,6 +109,10 @@ slots:
     - zero
     - one
     - more
+  other_time:
+    max_value: 168.0
+    min_value: 0.0
+    type: float
   value_focus:
     type: categorical
     values:
@@ -130,8 +138,14 @@ templates:
   utter_agree_interesting:
   - text: Interesting, right? Why don't you try it now! Choose a value important to
       you.
+  utter_ask_good_behaviour:
+  - text: Do you think your behaviour reflect the value {value_focus} well?
   utter_ask_hour_on_act:
   - text: On average, how many hours do you spend time on {curr_act} in a week?
+  utter_ask_other_activity:
+  - text: Other than the three activities you mentioned earlier, do you spend time
+      on activities that are also aligned with {value_focus}? Please enter the total
+      number of hours per week you spend on them. (Enter 0 if none)
   utter_ask_stop:
   - text: Are you sure you want to stop session?
   - text: Are you sure you want to stop the conversation?

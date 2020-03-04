@@ -708,6 +708,12 @@
     - action_switch_activity
     - slot{"acts_done": true}
     - slot{"curr_act": "general"}
+    - utter_ask_other_activity
+* describe_hour{"number": "0"}
+    - action_set_other_time
+    - slot{"other_time" : 0.0}
+    - action_report_weekly_time
+    - utter_ask_good_behaviour
 
 ## interactive_story_1
 * choose_value{"value": "health"}
@@ -789,6 +795,12 @@
     - action_switch_activity
     - slot{"acts_done": true}
     - slot{"curr_act": "general"}
+    - utter_ask_other_activity
+* describe_hour{"number": "2"}
+    - action_set_other_time
+    - slot{"other_time" : 2.0}
+    - action_report_weekly_time
+    - utter_ask_good_behaviour
 
 
 ## interactive_story_1
@@ -871,14 +883,6 @@
     - slot{"acts_done": true}
     - slot{"curr_act": "general"}
 
-## interactive_story_1
-* choose_value{"value": "romance"}
-    - check_value_num
-    - slot{"num_value": "one"}
-    - slot{"value_focus": "romance"}
-    - utter_confirm_value
-* affirm
-> activity_focus
 
 > activity_focus
     - utter_next_section
@@ -957,6 +961,13 @@
     - action_switch_activity
     - slot{"acts_done": true}
     - slot{"curr_act": "general"}
+    - utter_ask_other_activity
+* describe_hour{"number": "1"}
+    - action_set_other_time
+    - slot{"other_time" : 1.0}
+    - action_report_weekly_time
+    - utter_ask_good_behaviour
+
 ## interactive_story_1
 * choose_value{"value": "family"}
     - check_value_num
@@ -1036,3 +1047,185 @@
     - action_switch_activity
     - slot{"acts_done": true}
     - slot{"curr_act": "general"}
+    - utter_ask_other_activity
+* describe_hour{"number": "1"}
+    - action_set_other_time
+    - slot{"other_time" : 1.0}
+    - action_report_weekly_time
+    - utter_ask_good_behaviour
+
+
+## interactive_story_1
+* choose_value{"value": "health"}
+    - check_value_num
+    - slot{"num_value": "one"}
+    - slot{"value_focus": "health"}
+    - utter_confirm_value
+* affirm
+    - utter_your_top_activities
+* behaviour_describe{"activity": "singing"}
+    - check_behaviour_num
+    - slot{"num_act": "three"}
+    - slot{"act_1": "exercising"}
+    - slot{"act_2": "watching tv"}
+    - slot{"act_3": "singing"}
+    - utter_confirm_activities
+* affirm
+    - utter_next_section
+    - action_switch_activity
+    - slot{"acts_done": false}
+    - slot{"curr_act": "exercising"}
+    - utter_ask_hour_on_act
+* describe_hour{"number": "8"}
+    - check_weekly_hour
+    - slot{"act1_time": 8.0}
+* affirm
+    - utter_is_activity_aligned
+* affirm
+    - set_act_align
+    - slot{"act1_align": true}
+    - utter_how_is_aligned
+* inform{"value": "endurance"}
+    - utter_will_continue_act
+* affirm
+    - set_act_cont
+    - slot{"act1_cont": true}
+    - utter_activity_done
+    - action_switch_activity
+    - slot{"acts_done": false}
+    - slot{"curr_act": "watching tv"}
+    - utter_ask_hour_on_act
+* describe_hour{"number": "5"}
+    - check_weekly_hour
+    - slot{"act2_time": 5.0}
+* affirm
+    - utter_is_activity_aligned
+* deny
+    - set_act_align
+    - slot{"act2_align": false}
+    - utter_why_spend_time
+* inform
+    - utter_will_continue_act
+* affirm
+    - set_act_cont
+    - slot{"act2_cont": true}
+    - ask_why_cont
+* inform
+    - utter_activity_done
+    - action_switch_activity
+    - slot{"acts_done": false}
+    - slot{"curr_act": "singing"}
+    - utter_ask_hour_on_act
+* describe_hour{"number": "5"}
+    - check_weekly_hour
+    - slot{"act3_time": 5.0}
+* affirm
+    - utter_is_activity_aligned
+* deny
+    - set_act_align
+    - slot{"act3_align": false}
+    - utter_why_spend_time
+* inform{"value": "activity"}
+    - utter_will_continue_act
+* affirm
+    - set_act_cont
+    - slot{"act3_cont": true}
+    - ask_why_cont
+* inform
+    - utter_activity_done
+    - action_switch_activity
+    - slot{"acts_done": true}
+    - slot{"curr_act": "general"}
+    - utter_ask_other_activity
+* describe_hour{"number": "2"}
+    - action_set_other_time
+    - slot{"other_time": 2.0}
+    - action_report_weekly_time
+    - utter_ask_good_behaviour
+
+## interactive_story_1
+* choose_value{"value": "family"}
+    - check_value_num
+    - slot{"num_value": "one"}
+    - slot{"value_focus": "family"}
+    - utter_confirm_value
+* affirm
+    - utter_your_top_activities
+* behaviour_describe{"activity": "exercising"}
+    - check_behaviour_num
+    - slot{"num_act": "three"}
+    - slot{"act_1": "spending time with family"}
+    - slot{"act_2": "playing video games"}
+    - slot{"act_3": "exercising"}
+    - utter_confirm_activities
+* affirm
+    - utter_next_section
+    - action_switch_activity
+    - slot{"acts_done": false}
+    - slot{"curr_act": "spending time with family"}
+    - utter_ask_hour_on_act
+* describe_hour{"number": "10"}
+    - check_weekly_hour
+    - slot{"act1_time": 10.0}
+* affirm
+    - utter_is_activity_aligned
+* affirm
+    - set_act_align
+    - slot{"act1_align": true}
+    - utter_how_is_aligned
+* inform
+    - utter_will_continue_act
+* affirm
+    - set_act_cont
+    - slot{"act1_cont": true}
+    - utter_activity_done
+    - action_switch_activity
+    - slot{"acts_done": false}
+    - slot{"curr_act": "playing video games"}
+    - utter_ask_hour_on_act
+* describe_hour{"number": "16"}
+    - check_weekly_hour
+    - slot{"act2_time": 16.0}
+* affirm
+    - utter_is_activity_aligned
+* deny
+    - set_act_align
+    - slot{"act2_align": false}
+    - utter_why_spend_time
+* inform{"value": "fun"}
+    - utter_will_continue_act
+* deny
+    - set_act_cont
+    - slot{"act2_cont": false}
+    - utter_activity_done
+    - action_switch_activity
+    - slot{"acts_done": false}
+    - slot{"curr_act": "exercising"}
+    - utter_ask_hour_on_act
+* describe_hour{"number": "10"}
+    - check_weekly_hour
+    - slot{"act3_time": 10.0}
+* affirm
+    - utter_is_activity_aligned
+* deny
+    - set_act_align
+    - slot{"act3_align": false}
+    - utter_why_spend_time
+* inform
+    - utter_will_continue_act
+* affirm
+    - set_act_cont
+    - slot{"act3_cont": true}
+    - ask_why_cont
+* inform{"value": "health"}
+    - utter_activity_done
+    - action_switch_activity
+    - slot{"acts_done": true}
+    - slot{"curr_act": "general"}
+    - utter_ask_other_activity
+* number_input{"number": "0"}
+    - action_set_other_time
+    - slot{"other_time": 0.0}
+    - action_report_weekly_time
+    - utter_ask_good_behaviour
+* affirm
