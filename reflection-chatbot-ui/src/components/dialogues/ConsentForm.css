@@ -38,6 +38,6 @@
 }
 
 .display-linebreak-consentForm {
-    white-space: pre;
+    white-space: pre-wrap;
     text-indent: 5%;
 }
