@@ -250,12 +250,27 @@ class ActionAskWhyCont(Action):
 		return []
 
 
+class ActionReportTime(Action):
+	def name(self):
+		return 'action_report_weekly_time'
 
+	def run(self, dispatcher, tracker, domain):
+		total_hour = 0
+		total_hour += float(tracker.get_slot('act1_time')) if tracker.get_slot('act1_align') else 0
+		total_hour += float(tracker.get_slot('act2_time')) if tracker.get_slot('act2_align') else 0
+		total_hour += float(tracker.get_slot('act3_time')) if tracker.get_slot('act3_align') else 0
+		total_hour += float(tracker.get_slot('other_time'))
 
+		dispatcher.utter_message("You spend around {} hours per week doing activities that you think align with {}".format(str(total_hour), tracker.get_slot('value_focus')))
+		return []
 
+class ActionSetOther(Action):
+	def name(self):
+		return 'action_set_other_time'
 
-
-
+	def run(self, dispatcher, tracker, domain):
+		weekly_hour = float(next(tracker.get_latest_entity_values('number'), None))
+		return [SlotSet('other_time', weekly_hour)]
 
 
 

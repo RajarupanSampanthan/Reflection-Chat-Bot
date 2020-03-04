@@ -21,6 +21,24 @@
 - yes
 - yes
 - yes
+- yes
+- yes
+- yup
+- yes
+- yes
+- ya
+- yes
+- ya
+- yes
+- yea
+- ya
+- yes
+- yea
+- yes
+- ya
+- yes
+- yes
+- yes
 
 ## intent:behaviour_describe
 - [sleeping](activity), [eating](activity), [exercising](activity)
@@ -60,6 +78,8 @@
 - [exercising](activity), [playing video games](activity), [watching tv](activity)
 - [exercising](activity), [playing video game](activity), [reading](activity)
 - [exercising](activity), [reading](activity), [painting](activity)
+- [exercising](activity), [watching tv](activity), [singing](activity)
+- [spending time with family](activity), [playing video games](activity), [exercising](activity)
 
 ## intent:bot_challenge
 - are you a bot?
@@ -117,6 +137,8 @@
 - [mindfulness](value)
 - [romance](value)
 - [family](value)
+- [health](value)
+- [family](value)
 
 ## intent:deny
 - no
@@ -127,6 +149,11 @@
 - not really
 - actually, I changed my mind
 - not really
+- no
+- no
+- no
+- no
+- no
 - no
 - no
 - no
@@ -171,6 +198,13 @@
 - about [10](number) hours
 - about [5](number) hours
 - about [2](number) hours
+- [8](number) hours a week
+- about [5](number) hours
+- [5](number) hours
+- [2](number) hours
+- [10](number) hours
+- [16](number) hours
+- [10](number) hours
 
 ## intent:explain_chatbot_purpose
 - what can you help me do?
@@ -257,6 +291,15 @@
 - because it is important to my [health](value)
 - because it is [fun](value)
 - because I paint with my family
+- because it helps me build stamina and [endurance](value)
+- to watch the news and get information about the current issues
+- because watching the news is important
+- because it is a [fun](value) [activity](value)
+- because i enjoy singing
+- it helps with imporving our relationship
+- because it is [fun](value)
+- because it need to get stronger
+- because it imporves my [health](value)
 
 ## intent:mood_great
 - perfect
@@ -298,6 +341,7 @@
 - about [5](number)
 - [160](number)
 - about [5](number) huors
+- [0](number)
 
 ## intent:sounds_boring
 - sounds lame
