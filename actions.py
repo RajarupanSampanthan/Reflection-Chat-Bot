@@ -43,10 +43,10 @@ value_meaning_dict = {
 	"health" 			: "Health -  to be physically well and health",
 	"mindfulness" 		: "Mindfulness - to live conscious and mindful of the present moment",
 	"independence" 		: "Independence -  to be free from depending on others",
-	"purpose" 			: "Purpose - to have meaning and direction in my life", 
-	"self-esteem" 		: "Self-esteem - to feel good about myself", 
+	"purpose" 			: "Purpose - to have meaning and direction in my life",
+	"self-esteem" 		: "Self-esteem - to feel good about myself",
 	"wealth" 			: "Wealth - to have plenty of money",
-	"friendship" 		: "Friendship -  to have close, supportive friends", 
+	"friendship" 		: "Friendship -  to have close, supportive friends",
 	"morality" 			: "Morality - to live a morally pure and excellent life",
 	"romance" 			: "Romance -  to have intense, exciting love in my life",
 	"responsibility" 	: "Responsibility - to make and carry out responsible decision",
@@ -72,10 +72,10 @@ class ActionCheckValueNum(Action):
 		elif num_value == 0:
 			dispatcher.utter_message("I didn't quite get that, please select a value important to you from the list above.")
 			slot_num_value = 'zero'
-		else: 
+		else:
 			dispatcher.utter_message("You selected " + ", ".join(value_list) + ". Which one do you value the most?")
 			slot_num_value = 'more'
-		
+
 		return [SlotSet('num_value', slot_num_value)]
 
 
@@ -154,3 +154,8 @@ class ActionCheckBehaviourNum(Action):
 			dispatcher.utter_message("I've only detected {} activity(ies) from your response".format(str(num_action)))
 			return [SlotSet('num_act', 'less')]
 
+class ActionCheckFeedback(Action):
+	def name(self):
+		return 'action_check_feedback'
+
+	def run(self, dispatcher, tracker, domain):

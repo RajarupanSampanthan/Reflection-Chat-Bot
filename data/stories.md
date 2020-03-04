@@ -41,7 +41,7 @@
     - check_value_num
     - slot{"num_value": "more"}
 
-## happy_path 
+## happy_path
 * choose_value{"value": "friendship"}
     - check_value_num
     - slot{"num_value": "one"}
