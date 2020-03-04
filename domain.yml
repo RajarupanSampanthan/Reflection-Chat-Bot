@@ -5,6 +5,7 @@ actions:
 - action_repeat
 - check_behaviour_num
 - check_value_num
+- action_check_feedback
 - utter_agree_interesting
 - utter_ask_stop
 - utter_cheer_up
@@ -35,7 +36,7 @@ intents:
 - greet
 - explain_value
 - explain_chatbot_purpose
-- feedbacks
+- feedbacks_num
 - sounds_cool:
     use_entities: []
 - goodbye
