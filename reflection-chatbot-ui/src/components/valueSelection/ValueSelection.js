@@ -96,7 +96,7 @@ let values = [{
     descript: "to be accepted as I am",
     icon: AcceptanceIcon
 }];
-var maxValuesAllowed = 3;
+var maxValuesAllowed = 1;
 
 class ValueSelection extends Component {
 
@@ -153,7 +153,7 @@ class ValueSelection extends Component {
         return (
             <React.Fragment>
                 <div>
-                    <h3 className='intro' >Welcome to the Reflection Chatbot! <br />Please select the 3 values that are most important to you to begin.</h3>
+                    <h3 className='intro' >Welcome to the Reflection Chatbot! <br />Please select the value that is most important to you to begin.</h3>
                     <div className='cardDisplay'>
                         {values.map((value) => (
                             <div key={value.name}>

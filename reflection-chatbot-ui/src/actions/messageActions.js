@@ -29,7 +29,10 @@ export const sendMessage = (msgData) => dispatch => {
         type: SET_LOADING,
         payload: null
     });
-    axios.post('http://localhost:5005/webhooks/rest/webhook', msgData)
+    // AWS server
+    
+    //axios.post('https://52.14.235.139:5005/webhooks/rest/webhook', msgData)
+    axios.post('https://b99e91f0.ngrok.io/webhooks/rest/webhook', msgData)
         .then(res => {
             let msgText = "";
             res.data.map((newMsg) => {
