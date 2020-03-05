@@ -351,7 +351,7 @@
     - form{"question_8": "feedback_form"}
     - form{"question_8": null}
 
-## unhappy path
+## unhappy path 1
 * feedbacks_num
     - feedback_form
     - utter_ask_question_1
@@ -359,3 +359,67 @@
     - utter_ask_stop
 * deny
     - action_repeat
+
+## unhappy path 2
+* feedbacks_num
+    - feedback_form
+    - utter_ask_question_2
+* stop_convo
+    - utter_ask_stop
+* deny
+    - action_repeat
+
+## unhappy path 3
+    * feedbacks_num
+        - feedback_form
+        - utter_ask_question_3
+    * stop_convo
+        - utter_ask_stop
+    * deny
+        - action_repeat
+
+## unhappy path 4
+    * feedbacks_num
+        - feedback_form
+        - utter_ask_question_4
+    * stop_convo
+        - utter_ask_stop
+    * deny
+        - action_repeat
+
+## unhappy path 5
+    * feedbacks_num
+        - feedback_form
+        - utter_ask_question_5
+    * stop_convo
+        - utter_ask_stop
+    * deny
+        - action_repeat
+
+
+## unhappy path 6
+    * feedbacks_num
+       - feedback_form
+       - utter_ask_question_6
+    * stop_convo
+       - utter_ask_stop
+    * deny
+       - action_repeat        
+
+## unhappy path 7
+    * feedbacks_num
+       - feedback_form
+       - utter_ask_question_7
+    * stop_convo
+       - utter_ask_stop
+    * deny
+       - action_repeat
+
+## unhappy path 8
+    * feedbacks_num
+       - feedback_form
+       - utter_ask_question_8
+    * stop_convo
+       - utter_ask_stop
+    * deny
+       - action_repeat
