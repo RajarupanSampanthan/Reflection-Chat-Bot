@@ -322,7 +322,8 @@
     - utter_confirm_activities
 * affirm
     - utter_next_section
-##happy path
+
+## happy path
 * feedbacks_num
     - feedback_form
     - utter_ask_question_1
@@ -349,3 +350,12 @@
     - utter_ask_question_8
     - form{"question_8": "feedback_form"}
     - form{"question_8": null}
+
+## unhappy path
+* feedbacks_num
+    - feedback_form
+    - utter_ask_question_1
+* stop_convo
+    - utter_ask_stop
+* deny
+    - action_repeat
