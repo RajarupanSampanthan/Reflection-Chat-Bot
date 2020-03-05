@@ -1,11 +1,12 @@
 %YAML 1.1
 ---
+forms:
+- feedback_form
 actions:
 - action_explain_value
 - action_repeat
 - check_behaviour_num
 - check_value_num
-- action_check_feedback
 - utter_agree_interesting
 - utter_ask_stop
 - utter_cheer_up
@@ -22,11 +23,13 @@ actions:
 - utter_state_chatbot_purpose
 - utter_your_top_activities
 - utter_your_top_activities_again
-- utter_feedbacks
+- utter_submit
+
 
 entities:
 - activity
 - value
+- feedback
 intents:
 - behaviour_describe
 - affirm
@@ -83,6 +86,23 @@ slots:
     - responsibility
     - knowledge
     - acceptance
+  question_1:
+    type: unfeaturized
+  question_2:
+    type: unfeaturized
+  question_3:
+    type: unfeaturized
+  question_4:
+    type: unfeaturized
+  question_5:
+    type: unfeaturized
+  question_6:
+    type: unfeaturized
+  question_7:
+    type: unfeaturized
+  question_8:
+    type: unfeaturized
+
 templates:
   utter_agree_interesting:
   - text: Interesting, right? Why don't you try it now! Choose a value important to
@@ -131,12 +151,19 @@ templates:
   - text: What are the top three activities you spent most of your time doing in the
       past week? (Hint - use more generic activities such as 'exercising' as suppose
       to 'dragon boating').
-  utter_feedbacks:
+  utter_ask_question_1:
   - text: On scale of 1-10, how well do you think reflection Chatbot understands your inputs?
+  utter_ask_question_2:
   - text: On scale of 1-10, how much are you motivated to make a change to your life?
+  utter_ask_question_3:
   - text: On scale of 1-10, how comfortable for you to answer questions the Chatbot asks?
+  utter_ask_question_4:
   - text: On scale of 1-10, how well the Chatbot help you find out whether or not your actions and your important values align?
+  utter_ask_question_5:
   - text: On scale of 1-10, what will be the chance for you to recommend this Chatbot to your family or friends?
+  utter_ask_question_6:
   - text: On scale of 1-10, how well the Chatbot help you to come up with a new goal to make improvements?
+  utter_ask_question_7:
   - text: On scale of 1-10, how relevant are the follow-up questions Chatbot asks?
+  utter_ask_question_8:
   - text: On scale of 1-10, how much do you think reflection chatbot can have positive impact on users?

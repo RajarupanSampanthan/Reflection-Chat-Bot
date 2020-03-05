@@ -154,8 +154,66 @@ class ActionCheckBehaviourNum(Action):
 			dispatcher.utter_message("I've only detected {} activity(ies) from your response".format(str(num_action)))
 			return [SlotSet('num_act', 'less')]
 
-class ActionCheckFeedback(Action):
+class ActionFeedbackForm(FormAction):
 	def name(self):
-		return 'action_check_feedback'
-
-	def run(self, dispatcher, tracker, domain):
+		return 'feedback_form'
+	@staticmethod
+	def required_slots(tracker):
+			return[
+			"question_1",
+			"question_2",
+			"question_3",
+			"question_4",
+			"question_5",
+			"question_6",
+			"question_7",
+			"question_8",
+			]
+	def submit(self, dispatcher, tracker, domain):
+		dispatcher.utter_message(template="utter_submit")
+		return[]
+	def slot_mapping (self):
+		return {
+			"feedback": self.from_entity(entity ="feedback"),
+			"question_1":[
+			self.from_intent(
+			intent = ["feedbacks_num", "feedback_form"]
+			)
+			],
+			"question_2":[
+			self.from_intent(
+			intent = ["feedbacks_num", "feedback_form"]
+			)
+			],
+			"question_3":[
+			self.from_intent(
+			intent = ["feedbacks_num", "feedback_form"]
+			)
+			],
+			"question_4":[
+			self.from_intent(
+			intent = ["feedbacks_num", "feedback_form"]
+			)
+			],
+			"question_5":[
+			self.from_intent(
+			intent = ["feedbacks_num", "feedback_form"]
+			)
+			],
+			"question_6":[
+			self.from_intent(
+			intent = ["feedbacks_num", "feedback_form"]
+			)
+			],
+			"question_7":[
+			self.from_intent(
+			intent = ["feedbacks_num", "feedback_form"]
+			)
+			],
+			"question_8":[
+			self.from_intent(
+			intent = ["feedbacks_num", "feedback_form"]
+			)
+			],
+		}
+	

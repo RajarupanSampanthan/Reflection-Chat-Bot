@@ -322,3 +322,30 @@
     - utter_confirm_activities
 * affirm
     - utter_next_section
+##happy path
+* feedbacks_num
+    - feedback_form
+    - utter_ask_question_1
+    - form{"question_1": "feedback_form"}
+    - form{"question_1": null}
+    - utter_ask_question_2
+    - form{"question_2": "feedback_form"}
+    - form{"question_2": null}
+    - utter_ask_question_3
+    - form{"question_3": "feedback_form"}
+    - form{"question_3": null}
+    - utter_ask_question_4
+    - form{"question_4": "feedback_form"}
+    - form{"question_4": null}
+    - utter_ask_question_5
+    - form{"question_5": "feedback_form"}
+    - form{"question_5": null}
+    - utter_ask_question_6
+    - form{"question_6": "feedback_form"}
+    - form{"question_6": null}
+    - utter_ask_question_7
+    - form{"question_7": "feedback_form"}
+    - form{"question_7": null}
+    - utter_ask_question_8
+    - form{"question_8": "feedback_form"}
+    - form{"question_8": null}
