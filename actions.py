@@ -216,4 +216,24 @@ class ActionFeedbackForm(FormAction):
 			)
 			],
 		}
-	
+	@staticmethod
+	def feedback_db() -> List[feedbacks_num]:
+		return[
+		0,
+		1,
+		2,
+		3,
+		4,
+		5,
+		6,
+		7,
+		8,
+		9,
+		10
+		]
+
+   def validate_feedbackdb(self, value:feedbacks_num):
+	   if value.lower() in self.feedback_db():
+		   return {"feedbackdb": value}
+	   else:
+		   return {"feedbackdb": None}
