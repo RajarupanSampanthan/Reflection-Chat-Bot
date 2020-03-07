@@ -4,14 +4,16 @@ import { Provider } from 'react-redux';
 
 import ConsentForm from './components/dialogues/ConsentForm';
 import ChatPanel from './components/chat/ChatPanel';
+import LandingPage from './components/landingPage/LandingPage';
 
 import store from './store';
 import ValueSelection from './components/valueSelection/ValueSelection';
 
 class App extends Component {
   state = {
-    showConsentForm: true,
-    showValueSelect: true
+    showLandingPage: true,
+    showConsentForm: false,
+    showValueSelect: false
   };
 
   closeConsentForm = () => {
@@ -22,9 +24,21 @@ class App extends Component {
     this.setState({ showValueSelect: false });
   };
 
+  startChat = () => {
+    console.log("hit");
+    this.setState({ 
+      showLandingPage: false,
+      showConsentForm: true,
+      showValueSelect: true
+    });
+  }
+
   render() {
     let content;
-    if (this.state.showValueSelect===false) {
+    if (this.state.showLandingPage===true) {
+      content = <LandingPage startChat={this.startChat} />;
+    }
+    else if (this.state.showValueSelect===false) {
       content = <ChatPanel />;
     }
     else {

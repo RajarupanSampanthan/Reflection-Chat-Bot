@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+
 import { sendMessage } from '../../actions/messageActions';
 import SelectableCard from './selectableCard/SelectableCard';
 import './ValueSelection.css';
 import Button from 'react-bootstrap/Button';
+
 import AchieveIcon from './ValueIcons/AchievementIcon.png';
 import FamilyIcon from './ValueIcons/family.png';
 import AdventureIcon from './ValueIcons/fun.png';
@@ -21,80 +23,111 @@ import ResponsibilityIcon from './ValueIcons/Responsibility.png';
 import KnowledgeIcon from './ValueIcons/knowledge.png';
 import AcceptanceIcon from './ValueIcons/acceptance.png';
 
+import AchieveIconAlt from './ValueIcons/AchievementIcon-alt.png';
+import FamilyIconAlt from './ValueIcons/family-alt.png';
+import AdventureIconAlt from './ValueIcons/fun-alt.png';
+import HealthIconAlt from './ValueIcons/health-alt.png';
+import MindfulnessIconAlt from './ValueIcons/mindfulness-alt.png';
+import IndependenceIconAlt from './ValueIcons/independence-alt.png';
+import PurposeIconAlt from './ValueIcons/purpose-alt.png';
+import SelfEsteemIconAlt from './ValueIcons/self-esteem-alt.png';
+import WealthIconAlt from './ValueIcons/wealth-alt.png';
+import FriendshipIconAlt from './ValueIcons/friendship-alt.png';
+import MoralityIconAlt from './ValueIcons/morality-alt.png';
+import RomanceIconAlt from './ValueIcons/romance-alt.png';
+import ResponsibilityIconAlt from './ValueIcons/Responsibility-alt.png';
+import KnowledgeIconAlt from './ValueIcons/knowledge-alt.png';
+import AcceptanceIconAlt from './ValueIcons/acceptance-alt.png';
+
 let values = [{
     name: "Achievement",
     descript: "to have important accomplishments",
-    icon: AchieveIcon
+    icon: AchieveIcon,
+    altIcon: AchieveIconAlt
 },
 {
     name: "Family",
     descript: "to have a happy, loving family",
-    icon: FamilyIcon
+    icon: FamilyIcon,
+    altIcon: FamilyIconAlt
 },
 {
     name: "Fun",
     descript: "to play and have fun; to have new and exciting experiences",
-    icon: AdventureIcon
+    icon: AdventureIcon,
+    altIcon: AdventureIconAlt
 },
 {
     name: "Physical Health",
     descript: "to be physically well and healthy",
-    icon: HealthIcon
+    icon: HealthIcon,
+    altIcon: HealthIconAlt
 },
 {
     name: "Mindfulness",
     descript: "to be mentally well and healthy",
-    icon: MindfulnessIcon
+    icon: MindfulnessIcon,
+    altIcon: MindfulnessIconAlt
 },
 {
     name: "Independence",
     descript: "to be free from depending on others",
-    icon: IndependenceIcon
+    icon: IndependenceIcon,
+    altIcon: IndependenceIconAlt
 },
 {
     name: "Purpose",
     descript: "to have meaning and direction in my life",
-    icon: PurposeIcon
+    icon: PurposeIcon,
+    altIcon: PurposeIconAlt
 },
 {
     name: "Self-esteem",
     descript: "to feel good about myself",
-    icon: SelfEsteemIcon
+    icon: SelfEsteemIcon,
+    altIcon: SelfEsteemIconAlt
 },
 {
     name: "Wealth",
     descript: "to have plenty of money",
-    icon: WealthIcon
+    icon: WealthIcon,
+    altIcon: WealthIconAlt
 },
 {
     name: "Friendship",
     descript: "to have close, supportive friends",
-    icon: FriendshipIcon
+    icon: FriendshipIcon,
+    altIcon: FriendshipIconAlt
 },
 {
     name: "Morality",
     descript: "to live a morally pure and excellent life",
-    icon: MoralityIcon
+    icon: MoralityIcon,
+    altIcon: MoralityIconAlt
 },
 {
     name: "Romance",
     descript: "to have intense, exciting love in my life",
-    icon: RomanceIcon
+    icon: RomanceIcon,
+    altIcon: RomanceIconAlt
 },
 {
     name: "Responsibility",
     descript: "to make and carry out responsible decisions",
-    icon: ResponsibilityIcon
+    icon: ResponsibilityIcon,
+    altIcon: ResponsibilityIconAlt
 },
 {
     name: "Knowledge",
     descript: "to learn and contribute valuable knowledge",
-    icon: KnowledgeIcon
+    icon: KnowledgeIcon,
+    altIcon: KnowledgeIconAlt
 },
 {
     name: "Acceptance",
     descript: "to be accepted as I am",
-    icon: AcceptanceIcon
+    icon: AcceptanceIcon,
+    altIcon: AcceptanceIconAlt
 }];
 var maxValuesAllowed = 1;
 
@@ -157,7 +190,7 @@ class ValueSelection extends Component {
                     <div className='cardDisplay'>
                         {values.map((value) => (
                             <div key={value.name}>
-                                <SelectableCard isSelected={this.state.chosenVals.includes(value.name)} onClick={this.selectVal} title={value.name} descript={value.descript} icon={value.icon}/>
+                                <SelectableCard isSelected={this.state.chosenVals.includes(value.name)} onClick={this.selectVal} title={value.name} descript={value.descript} icon={value.icon} altIcon={value.altIcon}/>
                             </div>
                         ))}
                     </div>
