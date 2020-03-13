@@ -13,6 +13,32 @@ class ChatMessages extends Component {
     componentWillMount() {
         this.props.fetchMessages();
     }
+
+    emailConvo = (emailType) => {
+        //console.log(this.props.messages);
+        let email = this.props.messages.map(msg => {
+            return msg.sender + ": '" + msg.message + "'";
+        });
+        //email = email.join(' \n');
+        //console.log(email);
+        window.emailjs.send(
+            'gmail', 
+            'reflect_chatbot_interaction', 
+            {emailType: emailType, u_id: this.props.user, messages: email})
+            .then(res => {console.log('Email Sent')})
+            .catch(err => console.error('Email failed to send', err))
+    };
+
+    componentDidUpdate() {
+        let responseMsg = this.props.messages[this.props.messages.length-1].message;
+    if (responseMsg.length === 0) {
+        this.emailConvo("ERROR");
+    }
+    else if (responseMsg.includes("Thanks for using the reflection chatbot")) {
+        this.emailConvo("DONE");
+    }
+    }
+
     render() {
         let spinner;
     if (this.props.loading) {
@@ -112,7 +138,8 @@ ChatMessages.propTypes = {
 
 const mapStateToProps = state => ({
     messages: state.messages.messages,
-    loading: state.messages.loading
+    loading: state.messages.loading,
+    user: state.sessionID.sessionID
 })
 
 export default connect(mapStateToProps, { fetchMessages })(ChatMessages);
