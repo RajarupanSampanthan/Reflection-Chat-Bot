@@ -262,7 +262,8 @@ class ActionReportTime(Action):
 		total_hour += float(tracker.get_slot('other_time'))
 
 		dispatcher.utter_message("You spend around {} hours per week doing activities that you think align with {}".format(str(total_hour), tracker.get_slot('value_focus')))
-		return []
+		return [SlotSet('total_time', total_hour)]
+
 
 class ActionSetOther(Action):
 	def name(self):
@@ -273,5 +274,52 @@ class ActionSetOther(Action):
 		return [SlotSet('other_time', weekly_hour)]
 
 
+class ActionPlan(Action):
+	def name(self):
+		return 'action_plan'
+
+	def run(self, dispatcher, tracker, domain):
+		act_to_replace = self.get_act_to_replace(tracker)
+
+		value_focus = tracker.get_slot('value_focus')
+		add_act = tracker.get_slot('add_act')
+		
+		if act_to_replace:
+			act_to_replace = tracker.get_slot('act_' + act_to_replace)
+			dispatcher.utter_message("Since you think that {} is not aligned with {}, and that you should not continue doing it. ".format(act_to_replace, value_focus) + \
+				"I suggest that you reduce your time you spend on {} and replace it with {}. ".format(act_to_replace, add_act) + \
+				"This way you will spend more time on things aligning with {}!".format(value_focus))
+			return [SlotSet('act_to_replace', act_to_replace)]
+		else:
+			dispatcher.utter_message("Maybe you should start {} for total of 2-3 hours every week. That should help you align your behaviour to {}".format(add_act, value_focus))
+			return [SlotSet('act_to_replace', None)]
+
+	def get_act_to_replace(self, tracker):
+		score_1 = self.scoring(float(tracker.get_slot('act1_time')), tracker.get_slot('act1_align'), tracker.get_slot('act1_cont'))
+		score_2 = self.scoring(float(tracker.get_slot('act2_time')), tracker.get_slot('act2_align'), tracker.get_slot('act2_cont'))
+		score_3 = self.scoring(float(tracker.get_slot('act3_time')), tracker.get_slot('act3_align'), tracker.get_slot('act3_cont'))
+
+		score = max(score_1, score_2, score_3)
+
+		if score < 0:
+			return None
+		if score == score_1:
+			return '1'
+		elif score == score_2:
+			return '2'
+		elif score == score_3:
+			return '3'
+
+	def scoring(self, hours, align, cont):
+		score = hours
+		score *= -1 if (align or cont) else 1
+		return score
 
 
+class ActionSetAddAct(Action):
+	def name(self):
+		return 'action_set_additional_act'
+
+	def run(self, dispatcher, tracker, domain):
+		act = next(tracker.get_latest_entity_values('activity'), None)
+		return [SlotSet('add_act', act)]

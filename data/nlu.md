@@ -39,6 +39,46 @@
 - yes
 - yes
 - yes
+- ya
+- ya
+- ya
+- yes
+- yes
+- yes
+- yes
+- yes
+- yes
+- yes
+- yes
+- yes
+- yes
+- yes
+- yes
+- yes
+- yes
+- yes
+- ya
+- yes
+- yes
+- yes
+- yes
+- yes
+- yes
+- yes
+- yes
+- yes
+- ya
+- yes
+- yes
+- yes
+- yea
+- ys
+- yes
+- yes
+- ye
+- yes
+- yes
+- yes
 
 ## intent:behaviour_describe
 - [sleeping](activity), [eating](activity), [exercising](activity)
@@ -80,6 +120,15 @@
 - [exercising](activity), [reading](activity), [painting](activity)
 - [exercising](activity), [watching tv](activity), [singing](activity)
 - [spending time with family](activity), [playing video games](activity), [exercising](activity)
+- [reading](activity), [watching tv](activity), [studying](activity)
+- [watching tv](activity), [painting](activity), [studying](activity)
+- [exercising](activity), [reading](activity), [painting](activity)
+- [applying for jobs](activity)
+- [watching netflix](activity), [playing video games](activity), [exercising](activity)
+- [swimming](activity)
+- [running](activity), [playing the piano](activity), [watching netflix](activity)
+- [exercising](activity)
+- [running](activity), [eating](activity), [hanging out with friends](activity)
 
 ## intent:bot_challenge
 - are you a bot?
@@ -139,6 +188,11 @@
 - [family](value)
 - [health](value)
 - [family](value)
+- [health](value)
+- [wealth](value)
+- [health](value)
+- [health](value)
+- [health](value)
 
 ## intent:deny
 - no
@@ -149,6 +203,24 @@
 - not really
 - actually, I changed my mind
 - not really
+- no
+- no
+- no
+- no
+- no
+- no
+- no
+- no
+- no
+- no
+- no
+- no
+- no
+- no
+- no
+- no
+- no
+- no
 - no
 - no
 - no
@@ -205,6 +277,19 @@
 - [10](number) hours
 - [16](number) hours
 - [10](number) hours
+- [3](number) hours
+- [10](number) hours
+- [10](number) hours
+- [10](number) hours
+- [2](number) hours
+- [8](number) hours
+- [20](number) hours
+- [3](number) hours
+- [2](number) hours
+- [8](number) hours
+- [5](number) hours
+- [8](number) hours
+- [5](number) hours
 
 ## intent:explain_chatbot_purpose
 - what can you help me do?
@@ -300,6 +385,31 @@
 - because it is [fun](value)
 - because it need to get stronger
 - because it imporves my [health](value)
+- because it is a good [activity](value)
+- to watch news
+- because i want to know the current news
+- because i am in school and i need to get good grades
+- because it helps me to get a good job in the future
+- because I want to get stronger
+- because I also value [health](value)
+- because it is a nice activity to do
+- because i want to get better at painting
+- because it calms my mind
+- because I will need a job first to start earning money
+- because there are good films to watch
+- because i paid for the membership
+- because it's [fun](value)
+- it builds my strength
+- it helps me to build cardio
+- it builds stamina and cardio
+- because i enjoy playing the piano
+- because playing the piano makes me feel calm
+- because it is [fun](value)
+- i think it will help me build my strength
+- it builds cardio
+- it helps me get the nutrients
+- because i enjoy spending time with them
+- because they are important to me and I want to maintain our relationship
 
 ## intent:mood_great
 - perfect
@@ -341,6 +451,13 @@
 - about [5](number)
 - [160](number)
 - about [5](number) huors
+- [0](number)
+- [0](number)
+- [3](number)
+- [0](number)
+- [10](number) huors
+- [2](number)
+- [0](number)
 - [0](number)
 
 ## intent:sounds_boring
