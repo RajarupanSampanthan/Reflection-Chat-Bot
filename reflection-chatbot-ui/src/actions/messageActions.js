@@ -32,8 +32,8 @@ export const sendMessage = (msgData) => dispatch => {
     // AWS server
     
     //axios.post('http://ec2-3-135-82-8.us-east-2.compute.amazonaws.com:5005/webhooks/rest/webhook', msgData)
-    axios.post('https://reflectchatbotece496.xyz', msgData)
-    //axios.post('https://b99e91f0.ngrok.io/webhooks/rest/webhook', msgData)
+    //axios.post('https://reflectchatbotece496.xyz', msgData)
+    axios.post('http://localhost:5005/webhooks/rest/webhook', msgData)
         .then(res => {
             let msgText = "";
             res.data.map((newMsg) => {
