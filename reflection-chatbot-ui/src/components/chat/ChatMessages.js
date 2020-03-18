@@ -17,7 +17,7 @@ class ChatMessages extends Component {
     emailConvo = (emailType) => {
         //console.log(this.props.messages);
         let email = this.props.messages.map(msg => {
-            return msg.sender + ": '" + msg.message + "'";
+            return msg.sender + ": '" + msg.message + "' TOKEN";
         });
         //email = email.join(' \n');
         //console.log(email);

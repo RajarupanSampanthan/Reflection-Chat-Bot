@@ -61,7 +61,7 @@ const LandingPage = ({ startChat }) => {
                     </Col>
                     <Col className="LPSectionContent">
                     Please note that this software is still a work in progress. As such, you may experience bugs during your interaction. We would greatly appreciate it if you would help us to make the chatbot better by providing us with feedback. Please let us know if you experience any issues or have any suggestions on how your experience could have been improved. We also appreciate positive feedback, if there were things that you enjoyed about the experience. We can be contacted at reflectbot496@gmail.com.
-<br/><br/>Please also note that the chatbot learns by interacting with users so your responses to the questions will be stored. This information is only used to train the chatbot’s natural language processing algorithm. Additionally, the responses are completely anonymous and can not be traced back to you so please answer the questions openly and honestly.
+<br/><br/>Please also note that the chatbot learns by interacting with users so your responses to the questions will be stored. This information is only used to train the chatbot’s natural language processing algorithm and identify ways to improve the chatbot. Additionally, the responses are completely anonymous and can not be traced back to you so please answer the questions openly and honestly.
 <br/><br/>While we hope that you complete the conversation, feel free to stop at anytime if you feel uncomfortable by the questions asked. Just exit the page and your responses will not be recorded.
                     </Col>
                 </Row>
