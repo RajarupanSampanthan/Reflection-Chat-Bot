@@ -32,7 +32,7 @@ class ChatMessages extends Component {
     componentDidUpdate() {
         let responseMsg = this.props.messages[this.props.messages.length-1].message;
     if (responseMsg.length === 0) {
-        this.emailConvo("ERROR");
+        //this.emailConvo("ERROR");
     }
     else if (responseMsg.includes("Thanks for using the reflection chatbot")) {
         this.emailConvo("DONE");
