@@ -8,6 +8,7 @@ actions:
 - action_set_additional_act
 - action_set_other_time
 - action_switch_activity
+- utter_ask_rephrase
 - ask_why_cont
 - check_behaviour_num
 - check_value_num
@@ -234,3 +235,5 @@ templates:
   - text: What are the top three activities you spent most of your time doing in the
       past week? (Hint - use more generic activities such as 'exercising' as suppose
       to 'dragon boating').
+  utter_ask_rephrase:
+  - text: I didn't quite get that, can you rephrase your answer? 
