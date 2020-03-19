@@ -218,7 +218,7 @@ templates:
   utter_that_is_it:
   - text: And that's it for this conversation! I hope the session helps you to reflect
       on your actions and your most important value! Please send us any feedback to
-      'NotValidEmaill@gmail.com'. Thanks for using the reflection chatbot!
+      reflectbot496@gmail.com. Thanks for using the reflection chatbot!
   utter_why_spend_time:
   - text: You belive {curr_act} does not align with {value_focus}, why do you spend
       time on {curr_act}?
@@ -227,9 +227,9 @@ templates:
   utter_your_top_activities:
   - text: I would like to know how you spend your time - this will help you to reflect
       later on. What are the top three activities you spent most of your time doing
-      in the past week? Provide activities you would do in your 'free time'; 'sleeping',
+      in the past few months? Provide activities you would do in your 'free time'; 'sleeping',
       'eating', 'working' are essential to your life thus I do not encourage you to
-      write them, unless you do do these activities in your free time.
+      write them, unless you do do these activities in your free time. Please write your answers in present participle verbs such as 'singing' or 'jogging', instead of 'sing' or 'to jog', etc. 
   utter_your_top_activities_again:
   - text: What are the top three activities you spent most of your time doing in the
       past week? (Hint - use more generic activities such as 'exercising' as suppose

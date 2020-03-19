@@ -83,11 +83,11 @@
 ## intent:behaviour_describe
 - [sleeping](activity), [eating](activity), [exercising](activity)
 - [playing video games](activity), [watching netflix](activity), [baking](activity)
-- [reading](activity), [studying](activity), [playing piano](activity)
+- [reading](activity), [studying](activity) and [playing piano](activity)
 - [playing sports](activity), [hanging out with friends](activity), and [painting](activity)
 - [sketching](activity), [cooking](activity), [working](activity)
 - [writing stories](activity), [going to the gym](activity), [jogging](activity)
-- [running](activity), [watching youtube](activity), [shopping](activity)
+- [running](activity), [watching youtube](activity), and [shopping](activity)
 - [volunteering](activity), [taking care of my family](activity), [applying for a job](activity)
 - [sleeping](activity), [eating](activity), [working](activity), and [studying](activity)
 - [sining](activity), [sleeping](activity), [watching tv](activity)
@@ -112,23 +112,29 @@
 - [exercising with boyfriend](activity), [playing computer games](activity), [painting](activity)
 - [exercising](activity), [singing](activity), [studying](activity)
 - [swimming](activity), [exercising](activity), [singing](activity)
-- [swimming](activity), [exercising](activity), [singing](activity)
+- [swimming](activity), [exercising](activity), and [singing](activity)
 - [spending time with friends](activity), [cooking](activity), [studying](activity)
 - [watching videos](activity), [exercising](activity), [playing video games](activity)
-- [exercising](activity), [playing video games](activity), [watching tv](activity)
-- [exercising](activity), [playing video game](activity), [reading](activity)
+- [exercising](activity), [playing video games](activity), and [watching tv](activity)
+- [exercising](activity), [playing video game](activity) and [reading](activity)
 - [exercising](activity), [reading](activity), [painting](activity)
 - [exercising](activity), [watching tv](activity), [singing](activity)
 - [spending time with family](activity), [playing video games](activity), [exercising](activity)
 - [reading](activity), [watching tv](activity), [studying](activity)
 - [watching tv](activity), [painting](activity), [studying](activity)
-- [exercising](activity), [reading](activity), [painting](activity)
+- [exercising](activity), [reading](activity) and [painting](activity)
 - [applying for jobs](activity)
 - [watching netflix](activity), [playing video games](activity), [exercising](activity)
 - [swimming](activity)
 - [running](activity), [playing the piano](activity), [watching netflix](activity)
 - [exercising](activity)
 - [running](activity), [eating](activity), [hanging out with friends](activity)
+- [writing in a journal](activity), [rock climbing](activity), [going to the theatre](activity)
+- [listening to podcasts](activity), [listening to radio](activity), [writing a blog](activity)
+- [surfing the internet](activity), [doing arts and crafts](activity), and [going to the park](activity)
+- [doing yoga](activity), [writing poems](activity), [listening to music](activity)
+- [taking care of my dogs](activity), [taking care of my fish](activity), [fixing cars](activity)
+- [drink mixing](activity), [doing karate](activity), and [horsebakc riding](activity)
 
 ## intent:bot_challenge
 - are you a bot?
@@ -425,6 +431,19 @@
 - it helps me get the nutrients
 - because i enjoy spending time with them
 - because they are important to me and I want to maintain our relationship
+- I should stop eating junk food to get more fit.
+- I don’t want to continue playing piano since it takes too much of my time.
+- I’m getting tired of it.
+- To keep in shape
+- Idk, I’m tired all the time.
+- I just like painting.
+- I hate jogging
+- I go rock climbing with friends
+- It’s too expensive
+- I won’t be in school anymore
+- It’s too unhealthy
+- I just don’t like it.
+- I need to quit taking drugs.
 
 ## intent:mood_great
 - perfect
